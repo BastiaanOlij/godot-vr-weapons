@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+emission_enabled = true
+emission = Color( 0.788235, 0.784314, 0.713726, 1 )
+emission_energy = 5.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="CylinderMesh" id=2]
+
+material = SubResource( 1 )
+top_radius = 0.1
+bottom_radius = 0.1
+height = 7.0
+
+[node name="Light01" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.39553, 2.89935, 0 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
