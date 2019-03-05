@@ -1,55 +1,45 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://models/building/Light.tscn" type="PackedScene" id=1]
 [ext_resource path="res://models/building/Light-material.tres" type="Material" id=2]
 
 [sub_resource type="CubeMesh" id=1]
-
 flip_faces = true
 size = Vector3( 37, 3, 8 )
 
-[sub_resource type="SpatialMaterial" id=10]
-
+[sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.756863, 0.756863, 0.756863, 1 )
 metallic = 0.2
 roughness = 0.66
 
-[sub_resource type="CubeMesh" id=2]
-
+[sub_resource type="CubeMesh" id=3]
 size = Vector3( 0.5, 0.1, 8 )
 
-[sub_resource type="SpatialMaterial" id=11]
-
+[sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.294118, 0.278431, 0.278431, 1 )
 
-[sub_resource type="CubeMesh" id=3]
-
+[sub_resource type="CubeMesh" id=5]
 size = Vector3( 1, 2.2, 0.1 )
 
-[sub_resource type="SpatialMaterial" id=7]
-
+[sub_resource type="SpatialMaterial" id=6]
 flags_transparent = true
 albedo_color = Color( 0.258824, 0.321569, 0.247059, 0.466667 )
 metallic = 0.43
 roughness = 0.59
 
-[sub_resource type="PrismMesh" id=6]
-
+[sub_resource type="PrismMesh" id=7]
 left_to_right = 0.0
 size = Vector3( 0.5, 2, 8 )
 
 [sub_resource type="CubeMesh" id=8]
-
 size = Vector3( 30, 0.2, 0.2 )
 
 [sub_resource type="SpatialMaterial" id=9]
-
 albedo_color = Color( 0.65098, 0.65098, 0.65098, 1 )
 metallic = 1.0
 roughness = 0.14
 
-[sub_resource type="GIProbeData" id=4]
-
+[sub_resource type="GIProbeData" id=10]
 bounds = AABB( -18.9755, -2.23724, -5.548, 37.951, 4.47448, 11.096 )
 cell_size = 0.592984
 to_cell_xform = Transform( 1.68639, 0, 0, 0, 1.68639, 0, 0, 0, 1.68639, 32, 3.77285, 9.35606 )
@@ -60,97 +50,110 @@ normal_bias = 0.0
 propagation = 0.7
 interior = true
 
-[sub_resource type="CubeMesh" id=5]
-
+[sub_resource type="CubeMesh" id=11]
 material = ExtResource( 2 )
 size = Vector3( 0.6, 0.2, 0.6 )
+
+[sub_resource type="PlaneShape" id=18]
+
+[sub_resource type="PlaneShape" id=13]
+
+[sub_resource type="PlaneShape" id=14]
+
+[sub_resource type="PlaneShape" id=15]
+
+[sub_resource type="BoxShape" id=16]
+extents = Vector3( 0.25, 0.05, 4 )
+
+[sub_resource type="PlaneShape" id=17]
 
 [node name="Range" type="Spatial"]
 
 [node name="Range-simple" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="Shell" type="MeshInstance" parent="Range-simple"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69097, 0.0610075 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 use_in_baked_light = true
 mesh = SubResource( 1 )
-material/0 = SubResource( 10 )
+material/0 = SubResource( 2 )
 
 [node name="Table" type="MeshInstance" parent="Range-simple"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9326, 0.921278, 0 )
 use_in_baked_light = true
-mesh = SubResource( 2 )
-material/0 = SubResource( 11 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
 [node name="Divider01" type="MeshInstance" parent="Range-simple"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1361, 1.23748, 2.32355 )
 use_in_baked_light = true
-mesh = SubResource( 3 )
-material/0 = SubResource( 7 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
 
 [node name="Divider02" type="MeshInstance" parent="Range-simple"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1361, 1.23748, 0.884094 )
 use_in_baked_light = true
-mesh = SubResource( 3 )
-material/0 = SubResource( 7 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
 
 [node name="Divider03" type="MeshInstance" parent="Range-simple"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1361, 1.23748, -0.62439 )
 use_in_baked_light = true
-mesh = SubResource( 3 )
-material/0 = SubResource( 7 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
 
 [node name="Divider04" type="MeshInstance" parent="Range-simple"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1361, 1.23748, -2.17328 )
 use_in_baked_light = true
-mesh = SubResource( 3 )
-material/0 = SubResource( 7 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
 
 [node name="Ceiling01" type="MeshInstance" parent="Range-simple"]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 7.84082, 2.93884, 0 )
 use_in_baked_light = true
-mesh = SubResource( 6 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="Ceiling02" type="MeshInstance" parent="Range-simple"]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 5.25298, 2.93884, 0 )
 use_in_baked_light = true
-mesh = SubResource( 6 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="Ceiling03" type="MeshInstance" parent="Range-simple"]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 2.84651, 2.93884, 0 )
 use_in_baked_light = true
-mesh = SubResource( 6 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="Ceiling04" type="MeshInstance" parent="Range-simple"]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.336849, 2.93884, 0 )
 use_in_baked_light = true
-mesh = SubResource( 6 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="Ceiling05" type="MeshInstance" parent="Range-simple"]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -2.0942, 2.93884, 0 )
 use_in_baked_light = true
-mesh = SubResource( 6 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="Ceiling06" type="MeshInstance" parent="Range-simple"]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -4.66127, 2.93884, 0 )
 use_in_baked_light = true
-mesh = SubResource( 6 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="Ceiling07" type="MeshInstance" parent="Range-simple"]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -7.28539, 2.93884, 0 )
 use_in_baked_light = true
-mesh = SubResource( 6 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="Ceiling08" type="MeshInstance" parent="Range-simple"]
 transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -9.93411, 2.93884, 0 )
 use_in_baked_light = true
-mesh = SubResource( 6 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="Rail01" type="MeshInstance" parent="Range-simple"]
@@ -188,9 +191,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.91696, 0 )
 subdiv = 0
 extents = Vector3( 18.9755, 2.23724, 5.548 )
 interior = true
-data = SubResource( 4 )
+data = SubResource( 10 )
 
 [node name="Lights" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="Light01" parent="Lights" instance=ExtResource( 1 )]
 
@@ -221,25 +225,25 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0691, 3.20893, 3.04028 )
 
 [node name="SL01" type="MeshInstance" parent="Lights/SLGrp01"]
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SL02" type="MeshInstance" parent="Lights/SLGrp01"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.57349, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SL03" type="MeshInstance" parent="Lights/SLGrp01"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83887, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SL04" type="MeshInstance" parent="Lights/SLGrp01"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.27002, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SLGrp02" type="Spatial" parent="Lights"]
@@ -248,25 +252,25 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0691, 3.20893, 1.51587 )
 
 [node name="SL01" type="MeshInstance" parent="Lights/SLGrp02"]
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SL02" type="MeshInstance" parent="Lights/SLGrp02"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.57349, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SL03" type="MeshInstance" parent="Lights/SLGrp02"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83887, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SL04" type="MeshInstance" parent="Lights/SLGrp02"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.27002, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SLGrp03" type="Spatial" parent="Lights"]
@@ -275,25 +279,25 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0691, 3.20893, 0.0935059 )
 
 [node name="SL01" type="MeshInstance" parent="Lights/SLGrp03"]
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SL02" type="MeshInstance" parent="Lights/SLGrp03"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.57349, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SL03" type="MeshInstance" parent="Lights/SLGrp03"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83887, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SL04" type="MeshInstance" parent="Lights/SLGrp03"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.27002, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SLGrp04" type="Spatial" parent="Lights"]
@@ -302,25 +306,25 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0691, 3.20893, -1.3938 )
 
 [node name="SL01" type="MeshInstance" parent="Lights/SLGrp04"]
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SL02" type="MeshInstance" parent="Lights/SLGrp04"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.57349, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SL03" type="MeshInstance" parent="Lights/SLGrp04"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83887, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SL04" type="MeshInstance" parent="Lights/SLGrp04"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.27002, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SLGrp05" type="Spatial" parent="Lights"]
@@ -329,24 +333,55 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0691, 3.20893, -2.83459 )
 
 [node name="SL01" type="MeshInstance" parent="Lights/SLGrp05"]
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SL02" type="MeshInstance" parent="Lights/SLGrp05"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.57349, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SL03" type="MeshInstance" parent="Lights/SLGrp05"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83887, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SL04" type="MeshInstance" parent="Lights/SLGrp05"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.27002, 0, 0 )
 use_in_baked_light = true
-mesh = SubResource( 5 )
+mesh = SubResource( 11 )
 material/0 = null
+
+[node name="Environment" type="StaticBody" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Floor" type="CollisionShape" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0 )
+shape = SubResource( 18 )
+
+[node name="Left wall" type="CollisionShape" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 4 )
+shape = SubResource( 13 )
+
+[node name="Right wall" type="CollisionShape" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -4 )
+shape = SubResource( 14 )
+
+[node name="Rear wall" type="CollisionShape" parent="Environment"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 18.5, 0, 0 )
+shape = SubResource( 15 )
+
+[node name="Desk" type="CollisionShape" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9326, 0.921278, 0 )
+shape = SubResource( 16 )
+
+[node name="Invisible wall" type="StaticBody" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Invisible wall"]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 12, 0, 0 )
+shape = SubResource( 17 )
 

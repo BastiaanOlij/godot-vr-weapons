@@ -23,6 +23,12 @@ config/icon="res://icon.png"
 
 singletons=[ "res://addons/godot-openvr/godot_openvr.gdnlib" ]
 
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Environment"
+3d_physics/layer_3="Objects"
+
 [rendering]
 
 quality/voxel_cone_tracing/high_quality=false

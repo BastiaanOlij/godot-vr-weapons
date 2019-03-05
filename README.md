@@ -2,6 +2,7 @@
 
 This is a Godot demo project in support of my Godot VR weapons youtube tutorial videos.
 - [Part one](https://youtu.be/KaJSifo8Wis)
+- [Part two](https://youtu.be/gPVXwwvxlzs)
 
 In order to run this project you will need a very recent Godot 3.1 build.
 As of writing this document we're close to release of Godot 3.1
@@ -29,6 +30,7 @@ https://www.cgtrader.com/3d-models/military/armor/shooting-range-interiors
  - [CGTrader](https://www.cgtrader.com/)
  - [Free3D M1911 Gun](https://free3d.com/3d-model/m1911-game-ready-833466.html)
  - [Gun range](https://www.cgtrader.com/3d-models/military/armor/shooting-range-interiors)
+ - [OpenVR button info](https://github.com/GodotVR/godot_openvr/issues/4)
 
 About this repository
 ---------------------
