@@ -6,4 +6,3 @@ emission = Color( 0.788235, 0.784314, 0.713726, 1 )
 emission_energy = 2.0
 emission_operator = 0
 emission_on_uv2 = false
-

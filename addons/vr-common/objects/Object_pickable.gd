@@ -50,7 +50,3 @@ func let_go(impulse = Vector3(0.0, 0.0, 0.0)):
 		
 		# we are no longer picked up
 		picked_up_by = null
-
-# func _ready():
-#	original_collision_layer = collision_layer
-#	original_collision_mask = collision_mask
