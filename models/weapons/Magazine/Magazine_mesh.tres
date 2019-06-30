@@ -1,0 +1,16 @@
+[gd_resource type="CubeMesh" load_steps=3 format=2]
+
+[ext_resource path="res://models/fresnel_shader.tres" type="Shader" id=1]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/AlbedoColor = Color( 0.231373, 0.211765, 0.211765, 1 )
+shader_param/Metallic = 0.4
+shader_param/Roughness = 0.7
+shader_param/Outline = Color( 0.0156863, 0.184314, 0.956863, 1 )
+shader_param/FresnelStrength = 0.0
+
+[resource]
+material = SubResource( 1 )
+size = Vector3( 0.01, 0.08, 0.03 )

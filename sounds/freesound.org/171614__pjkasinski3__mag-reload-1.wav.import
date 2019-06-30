@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/171614__pjkasinski3__mag-reload-1.wav-bf3dd2be5f06a1847edcaea5167906ba.sample"
+
+[deps]
+
+source_file="res://sounds/freesound.org/171614__pjkasinski3__mag-reload-1.wav"
+dest_files=[ "res://.import/171614__pjkasinski3__mag-reload-1.wav-bf3dd2be5f06a1847edcaea5167906ba.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

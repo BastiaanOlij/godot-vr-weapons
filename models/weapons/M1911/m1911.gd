@@ -2,6 +2,7 @@ extends "res://addons/vr-common/objects/Object_pickable.gd"
 
 export (PackedScene) var casing = null
 export var initial_casing_velocity = 5.0
+export var magazine_size = 12
 export var ammunition = 12
 
 export var rumble = 0.0 setget set_rumble, get_rumble
@@ -15,6 +16,13 @@ func get_rumble():
 		return by_controller.rumble
 	else:
 		return 0.0
+
+func _update_highlight():
+	var material = $Pivot/Gun/gunbody.mesh.surface_get_material(0)
+	if closest_count > 0:
+		material.set_shader_param("FresnelStrength", 1.0)
+	else:
+		material.set_shader_param("FresnelStrength", 0.0)
 
 func action():
 	if !$AnimationPlayer.is_playing():
@@ -42,3 +50,14 @@ func _emit_casing():
 	new_casing.linear_velocity = new_casing.transform.basis.x * initial_casing_velocity
 	
 	get_node("/root/Main/Viewport-VR/Spawns").add_child(new_casing)
+
+func _on_Gun_load_point_body_entered(body):
+	# our ammo is loaded, so we can destroy our magazine
+	body.drop_and_free()
+	
+	# and reload
+	ammunition = magazine_size
+	
+	# and finally play reload animation
+	$AnimationPlayer.play("Load")
+	

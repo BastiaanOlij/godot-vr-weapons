@@ -4,8 +4,11 @@ This is a Godot demo project in support of my Godot VR weapons youtube tutorial 
 - [Part one](https://youtu.be/KaJSifo8Wis)
 - [Part two](https://youtu.be/gPVXwwvxlzs)
 - [Part three](https://youtu.be/57YxdOHQV2E)
+- [Part four](https://youtu.be/e_KaRNYg3P4)
+- [Part five](https://youtu.be/EK91zvMhck0)
 
-In order to run this project you will Godot 3.1 or later.
+In order to run this project you will Godot 3.2 or later.
+It can be adopted to 3.1 with minor changes especially around the shaders.
 
 Included in this repository is a custom windows build of the Godot OpenVR plugin with PR #30 applied.
 If you wish to run this project on another OS please compile from source code found here: https://github.com/GodotVR/godot_openvr
@@ -29,8 +32,9 @@ https://www.cgtrader.com/3d-models/military/armor/shooting-range-interiors
  - [Community hub](https://godotengine.org/community)
  - [My Youtube channel](https://www.youtube.com/BastiaanOlij)
  - [CGTrader](https://www.cgtrader.com/)
- - [Free3D M1911 Gun](https://free3d.com/3d-model/m1911-game-ready-833466.html)
  - [Gun range](https://www.cgtrader.com/3d-models/military/armor/shooting-range-interiors)
+ - [Free3D M1911 Gun](https://free3d.com/3d-model/m1911-game-ready-833466.html)
+ - [Sound files](https://freesound.org/), [Gunshot sound](https://www.youtube.com/redirect?redir_token=ZgZTgBeHrZN-UyisPXJh9vI1zKl8MTU2MTk3NDkwN0AxNTYxODg4NTA3&event=video_description&v=EK91zvMhck0&q=https%3A%2F%2Ffreesound.org%2Fpeople%2FBrokenphono%2Fsounds%2F344142%2F), [Empty gun sound](https://www.youtube.com/redirect?redir_token=ZgZTgBeHrZN-UyisPXJh9vI1zKl8MTU2MTk3NDkwN0AxNTYxODg4NTA3&event=video_description&v=EK91zvMhck0&q=https%3A%2F%2Ffreesound.org%2Fpeople%2FKlawyKogut%2Fsounds%2F154934%2F), [Magazine insert](https://freesound.org/people/Pjkasinski3/sounds/171614/)
  - [OpenVR button info](https://github.com/GodotVR/godot_openvr/issues/4)
 
 About this repository
@@ -42,3 +46,6 @@ https://twitter.com/mux213
 
 Videos about my work with Godot can by found on my youtube page:
 https://www.youtube.com/BastiaanOlij
+
+Support my work by becoming my Patreon:
+https://www.patreon.com/mux213

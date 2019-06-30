@@ -1,26 +1,30 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://addons/vr-common/objects/Object_pickable.tscn" type="PackedScene" id=1]
-[ext_resource path="res://models/weapons/m1911.gd" type="Script" id=2]
-[ext_resource path="res://models/weapons/M1911/M1911.dae" type="PackedScene" id=3]
+[ext_resource path="res://models/weapons/M1911/M1911.dae" type="PackedScene" id=1]
+[ext_resource path="res://models/weapons/M1911/m1911.gd" type="Script" id=2]
+[ext_resource path="res://models/weapons/Magazine/Magazine_mesh.tres" type="CubeMesh" id=3]
 [ext_resource path="res://sounds/freesound.org/344142__brokenphono__gunshot-002.wav" type="AudioStream" id=4]
-[ext_resource path="res://models/weapons/Casing.tscn" type="PackedScene" id=5]
+[ext_resource path="res://models/weapons/Casing/Casing.tscn" type="PackedScene" id=5]
 [ext_resource path="res://sounds/freesound.org/154934__klawykogut__empty-gun-shot.wav" type="AudioStream" id=6]
+[ext_resource path="res://addons/vr-common/objects/Object_pickable.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sounds/freesound.org/171614__pjkasinski3__mag-reload-1.wav" type="AudioStream" id=8]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.00950792, 0.068903, 0.120686 )
 
-[sub_resource type="SphereMesh" id=2]
+[sub_resource type="SphereShape" id=2]
+radius = 0.0182099
+
+[sub_resource type="SphereMesh" id=3]
 radius = 0.01
 height = 0.02
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=4]
 flags_transparent = true
 flags_unshaded = true
 albedo_color = Color( 1, 0, 0, 0.513726 )
 
-[sub_resource type="Animation" id=4]
-resource_name = "EmptyClick"
+[sub_resource type="Animation" id=5]
 length = 0.34
 tracks/0/type = "value"
 tracks/0/path = NodePath("EmptyAudio:playing")
@@ -35,7 +39,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.35
 step = 0.05
 tracks/0/type = "value"
@@ -57,10 +61,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.05, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 1.5, 0, 0 ), Vector3( 0, 0, 0 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 15, 0, -10 ), Vector3( 0, 0, 0 ) ]
 }
 tracks/2/type = "method"
 tracks/2/path = NodePath(".")
@@ -101,7 +105,47 @@ tracks/4/keys = {
 "values": [ 0.0, 1.0, 1.0, 0.0 ]
 }
 
-[node name="M1911" index="0" instance=ExtResource( 1 )]
+[sub_resource type="Animation" id=7]
+resource_name = "Load"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Gun_load_point/Magazine:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Gun_load_point/Magazine:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.0373511, -3.72529e-09 ), Vector3( 0, 0.0450107, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MagReloadAudio:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[node name="M1911" index="0" instance=ExtResource( 7 )]
 script = ExtResource( 2 )
 casing = ExtResource( 5 )
 
@@ -109,10 +153,10 @@ casing = ExtResource( 5 )
 shape = SubResource( 1 )
 
 [node name="Pivot" type="Spatial" parent="." index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.605327 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2 )
 
-[node name="Gun" parent="Pivot" index="0" instance=ExtResource( 3 )]
-transform = Transform( -0.007, 0, -6.11959e-10, 0, 0.007, 0, 6.11959e-10, 0, -0.007, 0, 0, -0.605327 )
+[node name="Gun" parent="Pivot" index="0" instance=ExtResource( 1 )]
+transform = Transform( -0.007, 0, -6.11959e-10, 0, 0.007, 0, 6.11959e-10, 0, -0.007, 0, 0, -0.2 )
 
 [node name="slidetrigger" parent="Pivot/Gun/Armature/Skeleton" index="0"]
 transform = Transform( 1, 7.10543e-15, -6.77626e-21, -7.10543e-15, 1, -4.26326e-14, -8.47033e-21, 4.26326e-14, 1, 0, 0, 0 )
@@ -123,6 +167,20 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -0.0112
 [node name="Casing_spawn_point" type="Spatial" parent="Pivot" index="1"]
 transform = Transform( 0.804399, -0.594089, 0, 0.594089, 0.804399, 0, 0, 0, 1, 0.0143872, 0.0733737, -0.573652 )
 
+[node name="Gun_load_point" type="Area" parent="Pivot" index="2"]
+transform = Transform( 1, 0, 0, 0, 0.951391, 0.307987, 0, -0.307987, 0.951391, 0, -0.0732738, -0.111915 )
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape" type="CollisionShape" parent="Pivot/Gun_load_point" index="0"]
+shape = SubResource( 2 )
+
+[node name="Magazine" type="MeshInstance" parent="Pivot/Gun_load_point" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0450107, 0 )
+visible = false
+mesh = ExtResource( 3 )
+material/0 = null
+
 [node name="Aim" type="RayCast" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0540342, -0.139601 )
 enabled = true
@@ -131,12 +189,13 @@ collision_mask = 6
 
 [node name="Target_dot" type="MeshInstance" parent="Aim" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.201355 )
-mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
-anims/EmptyClick = SubResource( 4 )
-anims/Fire = SubResource( 5 )
+anims/EmptyClick = SubResource( 5 )
+anims/Fire = SubResource( 6 )
+anims/Load = SubResource( 7 )
 
 [node name="GunShotAudio" type="AudioStreamPlayer3D" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0558502, -0.114175 )
@@ -149,5 +208,12 @@ bus = "_Gunshots"
 stream = ExtResource( 6 )
 unit_db = -20.0
 bus = "_Gunshots"
+
+[node name="MagReloadAudio" type="AudioStreamPlayer3D" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0709215, 0.0894946 )
+stream = ExtResource( 8 )
+unit_db = -20.0
+bus = "_Gunshots"
+[connection signal="body_entered" from="Pivot/Gun_load_point" to="." method="_on_Gun_load_point_body_entered"]
 
 [editable path="Pivot/Gun"]
