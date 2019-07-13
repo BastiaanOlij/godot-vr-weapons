@@ -1,13 +1,23 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://UI/Viewport-UI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://addons/godot-openvr/scenes/ovr_controller.tscn" type="PackedScene" id=3]
-[ext_resource path="res://models/weapons/M1911/M1911.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/vr-common/misc/VR_Common_Shader_Cache.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/godot-openvr/scenes/ovr_controller.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/vr-common/functions/Function_Teleport.tscn" type="PackedScene" id=5]
-[ext_resource path="res://models/building/Range.tscn" type="PackedScene" id=6]
-[ext_resource path="res://addons/vr-common/functions/Function_Pickup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://addons/vr-common/functions/Function_Pickup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://models/weapons/M1911/M1911.tscn" type="PackedScene" id=7]
 [ext_resource path="res://models/weapons/Magazine/Magazine.tscn" type="PackedScene" id=8]
+[ext_resource path="res://models/building/Range.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/player/right_hand_controller.gd" type="Script" id=10]
+[ext_resource path="res://scripts/player/left_hand_controller.gd" type="Script" id=11]
+[ext_resource path="res://models/effects/Smoke_quad.tres" type="QuadMesh" id=12]
+[ext_resource path="res://models/effects/Smoke_particles.tres" type="Material" id=13]
+[ext_resource path="res://models/effects/jkm_muzzleflash/muzzle_flash_material.tres" type="Material" id=14]
+
+[sub_resource type="CubeMesh" id=1]
+material = ExtResource( 14 )
+size = Vector3( 0.001, 0.001, 0.001 )
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 1 )
@@ -24,26 +34,41 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.6213
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0 )
 current = true
 
-[node name="Left hand" parent="Viewport-VR/ARVROrigin" instance=ExtResource( 3 )]
+[node name="vr_common_shader_cache" parent="Viewport-VR/ARVROrigin/ARVRCamera" instance=ExtResource( 3 )]
+
+[node name="Particles" type="Particles" parent="Viewport-VR/ARVROrigin/ARVRCamera/vr_common_shader_cache"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
+one_shot = true
+process_material = ExtResource( 13 )
+draw_pass_1 = ExtResource( 12 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Viewport-VR/ARVROrigin/ARVRCamera/vr_common_shader_cache"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Left hand" parent="Viewport-VR/ARVROrigin" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, 0 )
+script = ExtResource( 11 )
 
 [node name="Function_Teleport" parent="Viewport-VR/ARVROrigin/Left hand" instance=ExtResource( 5 )]
 collision_layer = 0
 collision_mask = 3
 
-[node name="Function_Pickup" parent="Viewport-VR/ARVROrigin/Left hand" instance=ExtResource( 7 )]
+[node name="Function_Pickup" parent="Viewport-VR/ARVROrigin/Left hand" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, -0.07, 0.03 )
 
-[node name="Right hand" parent="Viewport-VR/ARVROrigin" instance=ExtResource( 3 )]
+[node name="Right hand" parent="Viewport-VR/ARVROrigin" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0 )
 controller_id = 2
+script = ExtResource( 10 )
 
-[node name="Function_Pickup" parent="Viewport-VR/ARVROrigin/Right hand" instance=ExtResource( 7 )]
+[node name="Function_Pickup" parent="Viewport-VR/ARVROrigin/Right hand" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, -0.07, 0.03 )
 
-[node name="Range" parent="Viewport-VR" instance=ExtResource( 6 )]
+[node name="Range" parent="Viewport-VR" instance=ExtResource( 9 )]
 
-[node name="M1911" parent="Viewport-VR" instance=ExtResource( 4 )]
+[node name="M1911" parent="Viewport-VR" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 12, 1.1, 1.75 )
 
 [node name="Spawns" type="Spatial" parent="Viewport-VR"]
@@ -64,3 +89,8 @@ margin_bottom = 40.0
 [node name="Viewport-UI" parent="ViewportContainer" instance=ExtResource( 2 )]
 handle_input_locally = false
 render_target_update_mode = 3
+[connection signal="cooldown_finished" from="Viewport-VR/ARVROrigin/ARVRCamera/vr_common_shader_cache" to="." method="_on_vr_common_shader_cache_cooldown_finished"]
+[connection signal="has_dropped" from="Viewport-VR/ARVROrigin/Left hand/Function_Pickup" to="Viewport-VR/ARVROrigin/Left hand" method="_on_Function_Pickup_has_dropped"]
+[connection signal="has_picked_up" from="Viewport-VR/ARVROrigin/Left hand/Function_Pickup" to="Viewport-VR/ARVROrigin/Left hand" method="_on_Function_Pickup_has_picked_up"]
+[connection signal="has_dropped" from="Viewport-VR/ARVROrigin/Right hand/Function_Pickup" to="Viewport-VR/ARVROrigin/Right hand" method="_on_Function_Pickup_has_dropped"]
+[connection signal="has_picked_up" from="Viewport-VR/ARVROrigin/Right hand/Function_Pickup" to="Viewport-VR/ARVROrigin/Right hand" method="_on_Function_Pickup_has_picked_up"]

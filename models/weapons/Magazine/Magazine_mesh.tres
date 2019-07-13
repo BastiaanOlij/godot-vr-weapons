@@ -13,4 +13,4 @@ shader_param/FresnelStrength = 0.0
 
 [resource]
 material = SubResource( 1 )
-size = Vector3( 0.01, 0.08, 0.03 )
+size = Vector3( 0.01, 0.03, 0.08 )

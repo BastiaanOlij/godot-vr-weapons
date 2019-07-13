@@ -23,4 +23,10 @@ func _ready():
 		
 		# Tell our display what we want to display
 		$"ViewportContainer/Viewport-UI".set_viewport_texture($"Viewport-VR".get_texture())
-
+	
+	# start our particles so our shaders get compiled
+	$"Viewport-VR/ARVROrigin/ARVRCamera/vr_common_shader_cache/Particles".emitting=true
+ 
+func _on_vr_common_shader_cache_cooldown_finished():
+	$"Viewport-VR/ARVROrigin/ARVRCamera/vr_common_shader_cache/Particles".emitting=false
+ 

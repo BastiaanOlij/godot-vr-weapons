@@ -3,6 +3,7 @@
 [ext_resource path="res://UI/Viewport-UI.gd" type="Script" id=1]
 
 [node name="Viewport-UI" type="Viewport"]
+size = Vector2( 1024, 600 )
 hdr = false
 disable_3d = true
 usage = 0
@@ -14,4 +15,3 @@ script = ExtResource( 1 )
 margin_right = 40.0
 margin_bottom = 40.0
 stretch_mode = 5
-

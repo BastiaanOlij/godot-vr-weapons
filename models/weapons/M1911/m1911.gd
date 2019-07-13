@@ -1,6 +1,7 @@
 extends "res://addons/vr-common/objects/Object_pickable.gd"
 
 export (PackedScene) var casing = null
+export (PackedScene) var smoke = null
 export var initial_casing_velocity = 5.0
 export var magazine_size = 12
 export var ammunition = 12
@@ -24,11 +25,19 @@ func _update_highlight():
 	else:
 		material.set_shader_param("FresnelStrength", 0.0)
 
+func set_ammunition(new_value):
+	if ammunition != new_value:
+		ammunition = new_value
+		
+		$Ammo_count_viewport/Ammo_count.text = str(ammunition)
+		$Ammo_count_viewport.render_target_update_mode = Viewport.UPDATE_ONCE
+
 func action():
 	if !$AnimationPlayer.is_playing():
 		if ammunition > 0:
-			ammunition = ammunition - 1
+			set_ammunition(ammunition - 1)
 			$AnimationPlayer.play("Fire")
+			_emit_smoke()
 			
 			if $Aim.is_colliding():
 				var what_did_we_hit = $Aim.get_collider()
@@ -51,12 +60,18 @@ func _emit_casing():
 	
 	get_node("/root/Main/Viewport-VR/Spawns").add_child(new_casing)
 
+func _emit_smoke():
+	var new_smoke = smoke.instance()
+	new_smoke.transform = $Pivot/Smoke_spawn_point.global_transform
+	
+	get_node("/root/Main/Viewport-VR/Spawns").add_child(new_smoke)
+
 func _on_Gun_load_point_body_entered(body):
 	# our ammo is loaded, so we can destroy our magazine
 	body.drop_and_free()
 	
 	# and reload
-	ammunition = magazine_size
+	set_ammunition(magazine_size)
 	
 	# and finally play reload animation
 	$AnimationPlayer.play("Load")
