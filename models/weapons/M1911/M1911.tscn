@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://addons/vr-common/objects/Object_pickable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/godot-xr-tools/objects/Object_pickable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://models/weapons/M1911/m1911.gd" type="Script" id=2]
 [ext_resource path="res://models/weapons/Magazine/Magazine_mesh.tres" type="CubeMesh" id=3]
 [ext_resource path="res://sounds/freesound.org/344142__brokenphono__gunshot-002.wav" type="AudioStream" id=4]
@@ -12,6 +12,7 @@
 [ext_resource path="res://models/effects/Smoke.tscn" type="PackedScene" id=10]
 [ext_resource path="res://models/effects/jkm_muzzleflash/muzzleflash.obj" type="ArrayMesh" id=11]
 [ext_resource path="res://models/effects/jkm_muzzleflash/muzzleflash.png" type="Texture" id=12]
+
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.00950792, 0.068903, 0.120686 )

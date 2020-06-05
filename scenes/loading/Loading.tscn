@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/textures/Godot/splash.png" type="Texture" id=1]
+[ext_resource path="res://scenes/loading/Loading.gd" type="Script" id=2]
+
+[sub_resource type="Environment" id=3]
+background_mode = 1
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 200, 150 )
+
+[node name="Loading_scene" type="Spatial"]
+script = ExtResource( 2 )
+environment = SubResource( 3 )
+
+[node name="Pivot" type="Spatial" parent="."]
+
+[node name="Godot logo" type="MeshInstance" parent="Pivot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -200 )
+mesh = SubResource( 2 )
+material/0 = null

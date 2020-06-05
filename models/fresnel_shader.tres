@@ -64,73 +64,59 @@ void vertex() {
 
 void fragment() {
 // Input:4
-	vec3 n_out4p0;
-	n_out4p0 = vec3(UV,0.0);
+	vec3 n_out4p0 = vec3(UV, 0.0);
 
 // TextureUniform:2
 	vec3 n_out2p0;
 	float n_out2p1;
 	{
-		vec4 n_tex_read = texture( Albedo , n_out4p0.xy );
+		vec4 n_tex_read = texture(Albedo, n_out4p0.xy);
 		n_out2p0 = n_tex_read.rgb;
 		n_out2p1 = n_tex_read.a;
 	}
 
 // ColorUniform:15
-	vec3 n_out15p0;
-	float n_out15p1;
-	n_out15p0 = AlbedoColor.rgb;
-	n_out15p1 = AlbedoColor.a;
+	vec3 n_out15p0 = AlbedoColor.rgb;
+	float n_out15p1 = AlbedoColor.a;
 
 // VectorOp:14
-	vec3 n_out14p0;
-	n_out14p0 = n_out2p0 * n_out15p0;
+	vec3 n_out14p0 = n_out2p0 * n_out15p0;
 
 // ScalarUniform:5
-	float n_out5p0;
-	n_out5p0 = Metallic;
+	float n_out5p0 = Metallic;
 
 // ScalarUniform:6
-	float n_out6p0;
-	n_out6p0 = Roughness;
+	float n_out6p0 = Roughness;
 
 // Input:8
-	vec3 n_out8p0;
-	n_out8p0 = NORMAL;
+	vec3 n_out8p0 = NORMAL;
 
 // Input:9
-	vec3 n_out9p0;
-	n_out9p0 = VIEW;
+	vec3 n_out9p0 = VIEW;
 
 // Fresnel:7
-
-bool n_in7p2 = false;
+	bool n_in7p2 = false;
 	float n_in7p3 = 1.00000;
-	float n_out7p0;
-	n_out7p0 = n_in7p2 ? (pow(clamp(dot(n_out8p0, n_out9p0), 0.0, 1.0), n_in7p3)) : (pow(1.0 - clamp(dot(n_out8p0, n_out9p0), 0.0, 1.0), n_in7p3));
+	float n_out7p0 = n_in7p2 ? (pow(clamp(dot(n_out8p0, n_out9p0), 0.0, 1.0), n_in7p3)) : (pow(1.0 - clamp(dot(n_out8p0, n_out9p0), 0.0, 1.0), n_in7p3));
+
 // ColorUniform:11
-	vec3 n_out11p0;
-	float n_out11p1;
-	n_out11p0 = Outline.rgb;
-	n_out11p1 = Outline.a;
+	vec3 n_out11p0 = Outline.rgb;
+	float n_out11p1 = Outline.a;
 
 // VectorOp:10
-	vec3 n_out10p0;
-	n_out10p0 = vec3(n_out7p0) * n_out11p0;
+	vec3 n_out10p0 = vec3(n_out7p0) * n_out11p0;
 
 // ScalarUniform:13
-	float n_out13p0;
-	n_out13p0 = FresnelStrength;
+	float n_out13p0 = FresnelStrength;
 
 // VectorOp:12
-	vec3 n_out12p0;
-	n_out12p0 = n_out10p0 * vec3(n_out13p0);
+	vec3 n_out12p0 = n_out10p0 * vec3(n_out13p0);
 
 // TextureUniform:3
 	vec3 n_out3p0;
 	float n_out3p1;
 	{
-		vec4 n_tex_read = texture( Normal , n_out4p0.xy );
+		vec4 n_tex_read = texture(Normal, n_out4p0.xy);
 		n_out3p0 = n_tex_read.rgb;
 		n_out3p1 = n_tex_read.a;
 	}

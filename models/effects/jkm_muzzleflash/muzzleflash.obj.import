@@ -15,4 +15,5 @@ dest_files=[ "res://.import/muzzleflash.obj-6414e47b0ba821cfd5e77c73e1cb64be.mes
 
 generate_tangents=true
 scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
 optimize_mesh=true
