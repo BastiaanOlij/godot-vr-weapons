@@ -20,6 +20,9 @@ shadow_atlas_size = 4096
 [node name="Player" parent="Viewport-VR" instance=ExtResource( 3 )]
 render_viewport = NodePath("..")
 
+[node name="Particles" parent="Viewport-VR/Player/ARVRCamera/vr_common_shader_cache" index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57628e-07, 0, 2.37012 )
+
 [node name="LoadingScreen" parent="Viewport-VR" instance=ExtResource( 5 )]
 visible = false
 follow_camera = NodePath("../Player/ARVRCamera")
@@ -30,12 +33,18 @@ visible = false
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Viewport-VR"]
 environment = ExtResource( 6 )
 
+[node name="Spawns" type="Spatial" parent="Viewport-VR"]
+
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Viewport-UI" parent="ViewportContainer" instance=ExtResource( 2 )]
 handle_input_locally = false
 render_target_update_mode = 3
+target_fps = 60
 
 [editable path="Viewport-VR/Player"]

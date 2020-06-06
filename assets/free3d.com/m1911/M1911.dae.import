@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/M1911.dae-555f79dba6b0489bf6e4e61eab25cad6.scn"
+path="res://.import/M1911.dae-3ffea952db9dc99636afc74ff0bb6796.scn"
 
 [deps]
 
-source_file="res://models/weapons/M1911/M1911.dae"
-dest_files=[ "res://.import/M1911.dae-555f79dba6b0489bf6e4e61eab25cad6.scn" ]
+source_file="res://assets/free3d.com/m1911/M1911.dae"
+dest_files=[ "res://.import/M1911.dae-3ffea952db9dc99636afc74ff0bb6796.scn" ]
 
 [params]
 

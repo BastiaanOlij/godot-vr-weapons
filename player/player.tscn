@@ -44,42 +44,44 @@ material/0 = null
 [node name="ovr_shader_cache" parent="ARVRCamera" instance=ExtResource( 14 )]
 
 [node name="ovr_left_hand" parent="." instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.565626, 0 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.5, 1, 0 )
 
 [node name="Left hand" type="ARVRController" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, 0 )
 script = ExtResource( 2 )
 
 [node name="Function_Teleport" parent="Left hand" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, 0 )
 collision_layer = 0
 collision_mask = 6
 camera = NodePath("../../../Player/ARVRCamera")
 
 [node name="Function_Pickup" parent="Left hand" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.5, 0.93, 0.0299997 )
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0 )
 collision_layer = 0
 collision_mask = 4
 
 [node name="Function_pointer" parent="Left hand" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -0.5, 1, 0 )
 collision_mask = 2048
 
 [node name="ovr_right_hand" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0 )
 
 [node name="Right hand" type="ARVRController" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0 )
 controller_id = 2
+script = ExtResource( 2 )
 
 [node name="Function_Direct_movement" parent="Right hand" instance=ExtResource( 6 )]
 camera = NodePath("../../../Player/ARVRCamera")
 canFly = false
 
 [node name="Function_Pickup" parent="Right hand" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.5, 0.93, 0.0299997 )
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0 )
 collision_layer = 0
 collision_mask = 4
 
 [node name="Function_pointer" parent="Right hand" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.5, 1, 0 )
 collision_mask = 2048
+[connection signal="cooldown_finished" from="ARVRCamera/vr_common_shader_cache" to="." method="_on_vr_common_shader_cache_cooldown_finished"]
 [connection signal="button_pressed" from="Left hand" to="." method="_on_Left_hand_button_pressed"]
 [connection signal="button_pressed" from="Right hand" to="." method="_on_Right_hand_button_pressed"]

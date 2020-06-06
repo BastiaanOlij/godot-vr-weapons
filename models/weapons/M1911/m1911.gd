@@ -18,13 +18,6 @@ func get_rumble():
 	else:
 		return 0.0
 
-func _update_highlight():
-	var material = $Pivot/Gun/gunbody.mesh.surface_get_material(0)
-	if closest_count > 0:
-		material.set_shader_param("FresnelStrength", 1.0)
-	else:
-		material.set_shader_param("FresnelStrength", 0.0)
-
 func set_ammunition(new_value):
 	if ammunition != new_value:
 		ammunition = new_value

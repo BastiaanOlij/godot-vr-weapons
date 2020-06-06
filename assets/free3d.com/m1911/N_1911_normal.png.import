@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/257.jpg-2ed31ed3dfa89b06bc1606fa2d2f8fa2.s3tc.stex"
-path.etc2="res://.import/257.jpg-2ed31ed3dfa89b06bc1606fa2d2f8fa2.etc2.stex"
+path.s3tc="res://.import/N_1911_normal.png-7970053ff6381cb68872664f600e2d88.s3tc.stex"
+path.etc2="res://.import/N_1911_normal.png-7970053ff6381cb68872664f600e2d88.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/weapons/M1911/257.jpg"
-dest_files=[ "res://.import/257.jpg-2ed31ed3dfa89b06bc1606fa2d2f8fa2.s3tc.stex", "res://.import/257.jpg-2ed31ed3dfa89b06bc1606fa2d2f8fa2.etc2.stex" ]
+source_file="res://assets/free3d.com/m1911/N_1911_normal.png"
+dest_files=[ "res://.import/N_1911_normal.png-7970053ff6381cb68872664f600e2d88.s3tc.stex", "res://.import/N_1911_normal.png-7970053ff6381cb68872664f600e2d88.etc2.stex" ]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=0
+compress/normal_map=1
 flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=1
+flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

@@ -87,18 +87,15 @@ func _ready():
 		# change our physics fps
 		Engine.iterations_per_second = 90
 	
-	# Enable this again when we re-introduce logic into xr-tools 
-	# start our particles so our shaders get compiled
-	# $"ARVRCamera/vr_common_shader_cache/Particles".emitting=true
+	$"ARVRCamera/vr_common_shader_cache/Particles".emitting=true
 	
 	set_enable_movement(enable_movement)
 	set_enable_pickup(enable_pickup)
 	set_enable_pointer(enable_pointer)
 
-# Enable this again when we re-introduce logic into xr-tools  
-#func _on_vr_common_shader_cache_cooldown_finished():
-#	$"ARVRCamera/vr_common_shader_cache/Particles".emitting=false
- 
+func _on_vr_common_shader_cache_cooldown_finished():
+	$"ARVRCamera/vr_common_shader_cache/Particles".emitting=false
+
 func _on_Left_hand_button_pressed(button):
 	if button == $"Left hand/Function_pointer".active_button and enable_pointer and pointer_on_hand == 1:
 		pointer_on_hand = 0
@@ -108,3 +105,4 @@ func _on_Right_hand_button_pressed(button):
 	if button == $"Right hand/Function_pointer".active_button and enable_pointer and pointer_on_hand == 0:
 		pointer_on_hand = 1
 		set_enable_pointer(enable_pointer)
+
