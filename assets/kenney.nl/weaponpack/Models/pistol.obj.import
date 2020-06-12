@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pistol.obj-c3613dfec2f37048cd74c573b2ff183a.mesh"
+
+[deps]
+
+files=[ "res://.import/pistol.obj-c3613dfec2f37048cd74c573b2ff183a.mesh" ]
+
+source_file="res://assets/kenney.nl/weaponpack/Models/pistol.obj"
+dest_files=[ "res://.import/pistol.obj-c3613dfec2f37048cd74c573b2ff183a.mesh", "res://.import/pistol.obj-c3613dfec2f37048cd74c573b2ff183a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
