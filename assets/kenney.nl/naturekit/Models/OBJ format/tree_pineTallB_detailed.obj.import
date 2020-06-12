@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tree_pineTallB_detailed.obj-6d9a6c71db73625c35318ff5a694e5ad.mesh"
+
+[deps]
+
+files=[ "res://.import/tree_pineTallB_detailed.obj-6d9a6c71db73625c35318ff5a694e5ad.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/tree_pineTallB_detailed.obj"
+dest_files=[ "res://.import/tree_pineTallB_detailed.obj-6d9a6c71db73625c35318ff5a694e5ad.mesh", "res://.import/tree_pineTallB_detailed.obj-6d9a6c71db73625c35318ff5a694e5ad.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

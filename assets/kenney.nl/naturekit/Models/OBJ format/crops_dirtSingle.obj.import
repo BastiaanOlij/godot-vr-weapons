@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/crops_dirtSingle.obj-999059c2e84f2060ea09ae00264b9b6f.mesh"
+
+[deps]
+
+files=[ "res://.import/crops_dirtSingle.obj-999059c2e84f2060ea09ae00264b9b6f.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/crops_dirtSingle.obj"
+dest_files=[ "res://.import/crops_dirtSingle.obj-999059c2e84f2060ea09ae00264b9b6f.mesh", "res://.import/crops_dirtSingle.obj-999059c2e84f2060ea09ae00264b9b6f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

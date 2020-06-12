@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/crops_bambooStageB.obj-3483435a1537b24ab01456fb909c7c9d.mesh"
+
+[deps]
+
+files=[ "res://.import/crops_bambooStageB.obj-3483435a1537b24ab01456fb909c7c9d.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/crops_bambooStageB.obj"
+dest_files=[ "res://.import/crops_bambooStageB.obj-3483435a1537b24ab01456fb909c7c9d.mesh", "res://.import/crops_bambooStageB.obj-3483435a1537b24ab01456fb909c7c9d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cliff_stone.obj-91dde152b58baa257d732f4d404cc475.mesh"
+
+[deps]
+
+files=[ "res://.import/cliff_stone.obj-91dde152b58baa257d732f4d404cc475.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/cliff_stone.obj"
+dest_files=[ "res://.import/cliff_stone.obj-91dde152b58baa257d732f4d404cc475.mesh", "res://.import/cliff_stone.obj-91dde152b58baa257d732f4d404cc475.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

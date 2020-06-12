@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ground_pathStraight.obj-162bad2a1e39e987e2c754e90cd1f59b.mesh"
+
+[deps]
+
+files=[ "res://.import/ground_pathStraight.obj-162bad2a1e39e987e2c754e90cd1f59b.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/ground_pathStraight.obj"
+dest_files=[ "res://.import/ground_pathStraight.obj-162bad2a1e39e987e2c754e90cd1f59b.mesh", "res://.import/ground_pathStraight.obj-162bad2a1e39e987e2c754e90cd1f59b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

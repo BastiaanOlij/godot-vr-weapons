@@ -75,4 +75,4 @@ func _ready():
 	resource_queue.start()
 	
 	# Load our first scene
-	do_load_world("res://scenes/shooting_range/Shooting_Range.tscn")
+	do_load_world("res://scenes/selection/Selection.tscn")

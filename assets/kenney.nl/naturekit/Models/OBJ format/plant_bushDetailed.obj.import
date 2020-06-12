@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/plant_bushDetailed.obj-61b28826c345ee40ca869d973a43f0a6.mesh"
+
+[deps]
+
+files=[ "res://.import/plant_bushDetailed.obj-61b28826c345ee40ca869d973a43f0a6.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/plant_bushDetailed.obj"
+dest_files=[ "res://.import/plant_bushDetailed.obj-61b28826c345ee40ca869d973a43f0a6.mesh", "res://.import/plant_bushDetailed.obj-61b28826c345ee40ca869d973a43f0a6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

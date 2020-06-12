@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bed.obj-5d5d13b85f2b3c7825457aea0dbe3632.mesh"
+
+[deps]
+
+files=[ "res://.import/bed.obj-5d5d13b85f2b3c7825457aea0dbe3632.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/bed.obj"
+dest_files=[ "res://.import/bed.obj-5d5d13b85f2b3c7825457aea0dbe3632.mesh", "res://.import/bed.obj-5d5d13b85f2b3c7825457aea0dbe3632.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

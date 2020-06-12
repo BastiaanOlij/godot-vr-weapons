@@ -1,0 +1,353 @@
+[gd_scene load_steps=42 format=2]
+
+[ext_resource path="res://scenes/BaseScene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/cc0textures.com/rocks21/Rocks021_2K_Color.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes/outdoor_desert/outdoor_desert_environment.tres" type="Environment" id=3]
+[ext_resource path="res://assets/cc0textures.com/rocks21/Rocks021_2K_Normal.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/cc0textures.com/rocks21/Rocks021_2K_Roughness.jpg" type="Texture" id=5]
+[ext_resource path="res://assets/cc0textures.com/rocks21/Rocks021_2K_AmbientOcclusion.jpg" type="Texture" id=6]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_tallA.glb" type="PackedScene" id=7]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_tallJ.glb" type="PackedScene" id=8]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_tallH.glb" type="PackedScene" id=9]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_tallF.glb" type="PackedScene" id=10]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_tallG.glb" type="PackedScene" id=11]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_tallE.glb" type="PackedScene" id=12]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_tallI.glb" type="PackedScene" id=13]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_largeC.glb" type="PackedScene" id=14]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_tallD.glb" type="PackedScene" id=15]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_tallB.glb" type="PackedScene" id=16]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_largeB.glb" type="PackedScene" id=17]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_largeA.glb" type="PackedScene" id=18]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_tallC.glb" type="PackedScene" id=19]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_largeD.glb" type="PackedScene" id=20]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_smallB.glb" type="PackedScene" id=21]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_smallA.glb" type="PackedScene" id=22]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/rock_largeA.glb" type="PackedScene" id=23]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_smallD.glb" type="PackedScene" id=24]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/stone_smallC.glb" type="PackedScene" id=25]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/rock_largeB.glb" type="PackedScene" id=26]
+[ext_resource path="res://models/weapons/Magazine/Magazine.tscn" type="PackedScene" id=27]
+[ext_resource path="res://models/weapons/M1911/M1911.tscn" type="PackedScene" id=28]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/rock_largeC.glb" type="PackedScene" id=29]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/rock_largeF.glb" type="PackedScene" id=30]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/rock_largeE.glb" type="PackedScene" id=31]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/rock_largeD.glb" type="PackedScene" id=32]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/rock_tallA.glb" type="PackedScene" id=33]
+[ext_resource path="res://models/targets/target.tscn" type="PackedScene" id=34]
+[ext_resource path="res://assets/kenney.nl/naturekit/Models/GLTF format/log_stack.glb" type="PackedScene" id=35]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+metallic_specular = 0.1
+roughness = 0.78
+roughness_texture = ExtResource( 5 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 4 )
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource( 6 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 1000, 1000 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 500, 1, 500 )
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 2, 0.1, 0.5 )
+
+[sub_resource type="CubeMesh" id=5]
+size = Vector3( 0.1, 0.7, 0.1 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 1, 0.05, 0.25 )
+
+[node name="OutdoorDesert" instance=ExtResource( 1 )]
+environment = ExtResource( 3 )
+enable_pointer = false
+
+[node name="Floor" type="StaticBody" parent="." index="1"]
+collision_layer = 2
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206277, 7.62939e-06, 0.191013 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+shape = SubResource( 3 )
+
+[node name="Table" type="StaticBody" parent="." index="2"]
+collision_layer = 2
+
+[node name="TableTop" type="MeshInstance" parent="Table" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Leg01" type="MeshInstance" parent="Table" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 0.35, 0.2 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="Leg02" type="MeshInstance" parent="Table" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 0.35, -0.2 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="Leg03" type="MeshInstance" parent="Table" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95, 0.35, -0.2 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="Leg04" type="MeshInstance" parent="Table" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95, 0.35, 0.2 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Table" index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0 )
+shape = SubResource( 6 )
+
+[node name="Objects" type="Spatial" parent="." index="3"]
+
+[node name="M1911" parent="Objects" index="0" instance=ExtResource( 28 )]
+transform = Transform( 0.288916, 0.692339, -0.661207, -0.922868, 0.385117, 0, 0.254642, 0.610207, 0.750203, 0, 0.88119, 0.150425 )
+center_pickup_on = NodePath("../../Spatial/M1911/Pickup")
+highlight_mesh_instance = NodePath("../../Spatial/M1911/Pivot/Gun/gunbody")
+
+[node name="Magazine" parent="Objects" index="1" instance=ExtResource( 27 )]
+transform = Transform( 0.0576162, -0.998339, 0, 0.998339, 0.0576162, 0, 0, 0, 1, -0.270567, 0.822345, 0.172539 )
+center_pickup_on = NodePath("../../Objects/Magazine/Pickup")
+highlight_mesh_instance = NodePath("../../Objects/Magazine/MeshInstance")
+
+[node name="Magazine2" parent="Objects" index="2" instance=ExtResource( 27 )]
+transform = Transform( 0.0576162, -0.998339, 0, 0.998339, 0.0576162, 0, 0, 0, 1, -0.323383, 0.822345, 0.172539 )
+center_pickup_on = NodePath("../../Objects/Magazine2/Pickup")
+highlight_mesh_instance = NodePath("../../Objects/Magazine2/MeshInstance")
+
+[node name="Magazine3" parent="Objects" index="3" instance=ExtResource( 27 )]
+transform = Transform( 0.0576162, -0.998339, 0, 0.998339, 0.0576162, 0, 0, 0, 1, -0.383239, 0.822345, 0.172539 )
+center_pickup_on = NodePath("../../Objects/Magazine3/Pickup")
+highlight_mesh_instance = NodePath("../../Objects/Magazine3/MeshInstance")
+
+[node name="Magazine4" parent="Objects" index="4" instance=ExtResource( 27 )]
+transform = Transform( 0.0576162, -0.998339, 0, 0.998339, 0.0576162, 0, 0, 0, 1, -0.441989, 0.822345, 0.172539 )
+center_pickup_on = NodePath("../../Objects/Magazine4/Pickup")
+highlight_mesh_instance = NodePath("../../Objects/Magazine4/MeshInstance")
+
+[node name="Magazine5" parent="Objects" index="5" instance=ExtResource( 27 )]
+transform = Transform( 0.0576162, -0.998339, 0, 0.998339, 0.0576162, 0, 0, 0, 1, -0.504815, 0.822345, 0.172539 )
+center_pickup_on = NodePath("../../Objects/Magazine5/Pickup")
+highlight_mesh_instance = NodePath("../../Objects/Magazine5/MeshInstance")
+
+[node name="Target" parent="Objects" index="6" instance=ExtResource( 34 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -1.66904, 1, -9.98615 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="4"]
+transform = Transform( 0.874128, 0.454166, -0.172141, -0.0689301, 0.466838, 0.881652, 0.480779, -0.758812, 0.439382, 0, 3, 0 )
+shadow_enabled = true
+shadow_bias = 0.01
+
+[node name="Rocks" type="Spatial" parent="." index="5"]
+
+[node name="stone_tallE2" parent="Rocks" index="0" instance=ExtResource( 12 )]
+transform = Transform( 85.1535, 0, -52.4298, 0, 100, 0, 52.4298, 0, 85.1535, 76.7606, 0, -327.854 )
+
+[node name="stone_tallE3" parent="Rocks" index="1" instance=ExtResource( 12 )]
+transform = Transform( 85.1535, 0, -52.4298, 0, 100, 0, 52.4298, 0, 85.1535, 209.149, 0, -134.267 )
+
+[node name="stone_tallF" parent="Rocks" index="2" instance=ExtResource( 10 )]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, -198.805, 0, -240.927 )
+
+[node name="stone_tallF2" parent="Rocks" index="3" instance=ExtResource( 10 )]
+transform = Transform( 84.9073, 0, -52.8275, 0, 100, 0, 52.8275, 0, 84.9073, -71.9264, 0, -364.35 )
+
+[node name="stone_tallG" parent="Rocks" index="4" instance=ExtResource( 11 )]
+transform = Transform( 63.3084, 0, 77.4083, 0, 100, 0, -77.4083, 0, 63.3084, 156.378, 0, -150.954 )
+
+[node name="stone_tallG2" parent="Rocks" index="5" instance=ExtResource( 11 )]
+transform = Transform( 141.429, 0, 49.9772, 0, 150, 0, -49.9772, 0, 141.429, -316.109, 0, -282.808 )
+
+[node name="stone_tallH" parent="Rocks" index="6" instance=ExtResource( 9 )]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 172.572, 0, -89.349 )
+
+[node name="stone_tallH2" parent="Rocks" index="7" instance=ExtResource( 9 )]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, -191.945, 0, -14.1141 )
+
+[node name="stone_tallI" parent="Rocks" index="8" instance=ExtResource( 13 )]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, -181.326, 0, -89.2978 )
+
+[node name="stone_tallJ" parent="Rocks" index="9" instance=ExtResource( 8 )]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 178.078, 0, -10.2575 )
+
+[node name="stone_tallJ2" parent="Rocks" index="10" instance=ExtResource( 8 )]
+transform = Transform( 91.477, 0, -40.3976, 0, 100, 0, 40.3976, 0, 91.477, 224.515, 0, -227.693 )
+
+[node name="stone_tallJ4" parent="Rocks" index="11" instance=ExtResource( 8 )]
+transform = Transform( 91.477, 0, -40.3976, 0, 100, 0, 40.3976, 0, 91.477, 149.199, 0, -362.683 )
+
+[node name="stone_tallJ3" parent="Rocks" index="12" instance=ExtResource( 8 )]
+transform = Transform( 51.0633, 0, -85.9799, 0, 100, 0, 85.9799, 0, 51.0633, -254.389, 0, -142.258 )
+
+[node name="stone_tallA" parent="Rocks" index="13" instance=ExtResource( 7 )]
+transform = Transform( 90.9374, 0, 41.5979, 0, 100, 0, -41.5979, 0, 90.9374, -130.796, 0.0500001, -336.827 )
+
+[node name="stone_tallA2" parent="Rocks" index="14" instance=ExtResource( 7 )]
+transform = Transform( 90.9374, 0, 41.5979, 0, 100, 0, -41.5979, 0, 90.9374, -241.921, 0.0500001, -69.575 )
+
+[node name="stone_tallB" parent="Rocks" index="15" instance=ExtResource( 16 )]
+transform = Transform( 93.5234, 0, -35.403, 0, 100, 0, 35.403, 0, 93.5234, 27.5164, 0.0500001, -355.822 )
+
+[node name="stone_tallC" parent="Rocks" index="16" instance=ExtResource( 19 )]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 153.502, 0, -229.707 )
+
+[node name="stone_tallD" parent="Rocks" index="17" instance=ExtResource( 15 )]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, -188.711, 0, -160.555 )
+
+[node name="stone_tallD2" parent="Rocks" index="18" instance=ExtResource( 15 )]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, -210.063, 0, -337.523 )
+
+[node name="stone_tallE" parent="Rocks" index="19" instance=ExtResource( 12 )]
+transform = Transform( 85.1535, 0, -52.4298, 0, 100, 0, 52.4298, 0, 85.1535, -26.5093, 0, -327.854 )
+
+[node name="stone_tallE4" parent="Rocks" index="20" instance=ExtResource( 12 )]
+transform = Transform( 85.1535, 0, -52.4298, 0, 100, 0, 52.4298, 0, 85.1535, -26.5093, 0, -327.854 )
+
+[node name="stone_largeA" parent="Rocks" index="21" instance=ExtResource( 18 )]
+transform = Transform( 74.9291, 0, -66.2241, 0, 100, 0, 66.2241, 0, 74.9291, -180.414, -7.93782, -292.307 )
+
+[node name="stone_largeB" parent="Rocks" index="22" instance=ExtResource( 17 )]
+transform = Transform( -79.831, 0, -60.2247, 0, 100, 0, 60.2247, 0, -79.831, 151.194, -12.2871, -288.069 )
+
+[node name="stone_largeC" parent="Rocks" index="23" instance=ExtResource( 14 )]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 208.915, 10.4169, -59.7605 )
+
+[node name="stone_tallE5" parent="Rocks" index="24" instance=ExtResource( 12 )]
+transform = Transform( -95.2359, 0, -30.4981, 0, 100, 0, 30.4981, 0, -95.2359, 73.206, 0, 174.399 )
+
+[node name="stone_tallE6" parent="Rocks" index="25" instance=ExtResource( 12 )]
+transform = Transform( -95.2359, 0, -30.4981, 0, 100, 0, 30.4981, 0, -95.2359, -159.925, 0, 148.847 )
+
+[node name="stone_tallG3" parent="Rocks" index="26" instance=ExtResource( 11 )]
+transform = Transform( 17.5367, 0, -98.4503, 0, 100, 0, 98.4503, 0, 17.5367, -112.902, 0, 119.657 )
+
+[node name="stone_tallH3" parent="Rocks" index="27" instance=ExtResource( 9 )]
+transform = Transform( -65.1066, 0, -75.9021, 0, 100, 0, 75.9021, 0, -65.1066, -170.204, 0, 91.8397 )
+
+[node name="stone_tallJ5" parent="Rocks" index="28" instance=ExtResource( 8 )]
+transform = Transform( -65.1066, 0, -75.9021, 0, 100, 0, 75.9021, 0, -65.1066, -245.341, 0, 42.1999 )
+
+[node name="stone_tallJ6" parent="Rocks" index="29" instance=ExtResource( 8 )]
+transform = Transform( -90.2202, 0, -43.1314, 0, 100, 0, 43.1314, 0, -90.2202, -99.0159, 0, 221.337 )
+
+[node name="stone_tallJ7" parent="Rocks" index="30" instance=ExtResource( 8 )]
+transform = Transform( -90.2202, 0, -43.1314, 0, 100, 0, 43.1314, 0, -90.2202, 52.4797, 0, 252.057 )
+
+[node name="stone_largeB2" parent="Rocks" index="31" instance=ExtResource( 17 )]
+transform = Transform( 6.26341, 0, 99.8037, 0, 100, 0, -99.8037, 0, 6.26341, -5.45268, -12.2871, 204.993 )
+
+[node name="stone_largeC2" parent="Rocks" index="32" instance=ExtResource( 14 )]
+transform = Transform( -65.1066, 0, -75.9021, 0, 100, 0, 75.9021, 0, -65.1066, -216.324, -9.48118, 100.161 )
+
+[node name="stone_largeD" parent="Rocks" index="33" instance=ExtResource( 20 )]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, -183.417, -31.7552, -205.916 )
+
+[node name="stone_largeD2" parent="Rocks" index="34" instance=ExtResource( 20 )]
+transform = Transform( -99.6981, 0, 7.76414, 0, 100, 0, -7.76414, 0, -99.6981, -172.196, -35.367, -133.33 )
+
+[node name="stone_tallF3" parent="Rocks" index="35" instance=ExtResource( 10 )]
+transform = Transform( -98.5313, 0, 17.076, 0, 100, 0, -17.076, 0, -98.5313, 204.351, 0, 175.94 )
+
+[node name="stone_tallJ8" parent="Rocks" index="36" instance=ExtResource( 8 )]
+transform = Transform( -35.6314, 0, 93.4366, 0, 100, 0, -93.4366, 0, -35.6314, 275.968, 0, 88.2109 )
+
+[node name="stone_tallA3" parent="Rocks" index="37" instance=ExtResource( 7 )]
+transform = Transform( -96.7051, 0, -25.4585, 0, 100, 0, 25.4585, 0, -96.7051, 120.966, 0.0500001, 258.818 )
+
+[node name="stone_tallA4" parent="Rocks" index="38" instance=ExtResource( 7 )]
+transform = Transform( -96.7051, 0, -25.4585, 0, 100, 0, 25.4585, 0, -96.7051, 276.094, 0.0500001, 14.4663 )
+
+[node name="stone_tallD3" parent="Rocks" index="39" instance=ExtResource( 15 )]
+transform = Transform( -98.5313, 0, 17.076, 0, 100, 0, -17.076, 0, -98.5313, 198.95, 0, 273.039 )
+
+[node name="stone_largeA2" parent="Rocks" index="40" instance=ExtResource( 18 )]
+transform = Transform( -62.5202, 0, 78.0463, 0, 100, 0, -78.0463, 0, -62.5202, 177.457, -7.93782, 223.424 )
+
+[node name="stone_largeD3" parent="Rocks" index="41" instance=ExtResource( 20 )]
+transform = Transform( -98.5313, 0, 17.076, 0, 100, 0, -17.076, 0, -98.5313, 195.169, -31.7552, 138.815 )
+
+[node name="stone_largeD4" parent="Rocks" index="42" instance=ExtResource( 20 )]
+transform = Transform( 96.908, 0, -24.6746, 0, 100, 0, 24.6746, 0, 96.908, 196.506, -35.367, 65.3787 )
+
+[node name="Smallrocks" type="Spatial" parent="." index="6"]
+
+[node name="stone_smallA" parent="Smallrocks" index="0" instance=ExtResource( 22 )]
+transform = Transform( 0.949475, 0, -0.313843, 0, 1, 0, 0.313843, 0, 0.949475, -2.76674, 0, 0 )
+
+[node name="stone_smallA2" parent="Smallrocks" index="1" instance=ExtResource( 22 )]
+transform = Transform( 0.949475, 0, -0.313843, 0, 1, 0, 0.313843, 0, 0.949475, -1.02949, 0, -2.58687 )
+
+[node name="stone_smallA3" parent="Smallrocks" index="2" instance=ExtResource( 22 )]
+transform = Transform( 0.949475, 0, -0.313843, 0, 1, 0, 0.313843, 0, 0.949475, 3.02763, 0, -2.58687 )
+
+[node name="stone_smallB" parent="Smallrocks" index="3" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.94147, 0, 1.30519 )
+
+[node name="stone_smallB2" parent="Smallrocks" index="4" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32819, 0, -1.7173 )
+
+[node name="stone_smallC" parent="Smallrocks" index="5" instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05446, 0, 1.35039 )
+
+[node name="stone_smallC2" parent="Smallrocks" index="6" instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.91188, 0, 1.55371 )
+
+[node name="stone_smallD" parent="Smallrocks" index="7" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56332, 0, 2.64768 )
+
+[node name="stone_smallD2" parent="Smallrocks" index="8" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80628, 0, 3.38523 )
+
+[node name="Rocks2" type="Spatial" parent="." index="7"]
+
+[node name="rock_largeA" parent="Rocks2" index="0" instance=ExtResource( 23 )]
+transform = Transform( -95.5485, 0, -29.5041, 0, 100, 0, 29.5041, 0, -95.5485, -149.057, 0, 34.5612 )
+
+[node name="rock_largeB" parent="Rocks2" index="1" instance=ExtResource( 26 )]
+transform = Transform( 72.2569, 0, -69.1299, 0, 100, 0, 69.1299, 0, 72.2569, -84.0637, -14.9951, -307.38 )
+
+[node name="rock_largeC" parent="Rocks2" index="2" instance=ExtResource( 29 )]
+transform = Transform( 51.9937, 0, 85.4205, 0, 100, 0, -85.4205, 0, 51.9937, 72.3826, -14.3286, -255.995 )
+
+[node name="rock_largeC2" parent="Rocks2" index="3" instance=ExtResource( 29 )]
+transform = Transform( 53.5768, 0, -84.4365, 0, 100, 0, 84.4365, 0, 53.5768, 127.529, -19.7329, 166.192 )
+
+[node name="rock_largeD" parent="Rocks2" index="4" instance=ExtResource( 32 )]
+transform = Transform( -55.818, 0, -82.972, 0, 100, 0, 82.972, 0, -55.818, 141.027, -31.7981, -54.941 )
+
+[node name="rock_largeD2" parent="Rocks2" index="5" instance=ExtResource( 32 )]
+transform = Transform( -8.1973, 0, 99.6635, 0, 100, 0, -99.6635, 0, -8.1973, -60.3736, -31.7981, 157.15 )
+
+[node name="rock_largeE" parent="Rocks2" index="6" instance=ExtResource( 31 )]
+transform = Transform( -55.818, 0, -82.972, 0, 100, 0, 82.972, 0, -55.818, -171.782, -12.5261, -54.941 )
+
+[node name="rock_largeE2" parent="Rocks2" index="7" instance=ExtResource( 31 )]
+transform = Transform( -0.246051, 0, 99.9997, 0, 100, 0, -99.9997, 0, -0.246051, -115.223, -15.9989, 78.3563 )
+
+[node name="rock_largeF" parent="Rocks2" index="8" instance=ExtResource( 30 )]
+transform = Transform( 99.9207, 0, 3.98179, 0, 100, 0, -3.98179, 0, 99.9207, 168.469, -30.5693, -117.863 )
+
+[node name="rock_tallA" parent="Rocks2" index="9" instance=ExtResource( 33 )]
+transform = Transform( 12.5489, 0, 99.2095, 0, 100, 0, -99.2095, 0, 12.5489, 199.475, 0, -270.818 )
+
+[node name="Spatial" type="Spatial" parent="." index="8"]
+
+[node name="log_stack" parent="Spatial" index="0" instance=ExtResource( 35 )]
+transform = Transform( 0.8783, 0, -0.478109, 0, 1, 0, 0.478109, 0, 0.8783, -3.62935, 0.0500077, 0.0224699 )

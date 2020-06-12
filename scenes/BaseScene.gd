@@ -21,6 +21,8 @@ func exit_world():
 	# implement in subclass if applicable
 	pass
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _on_Panel_pressed():
+	emit_signal("change_world", "res://scenes/shooting_range/Shooting_Range.tscn")
+
+func _on_SelectDesertRange_pressed():
+	emit_signal("change_world", "res://scenes/outdoor_desert/outdoor_desert.tscn")

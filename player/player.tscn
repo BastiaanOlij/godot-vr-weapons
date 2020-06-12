@@ -55,6 +55,9 @@ collision_layer = 0
 collision_mask = 6
 camera = NodePath("../../../Player/ARVRCamera")
 
+[node name="Capsule" parent="Left hand/Function_Teleport/Target/Player_figure" index="0"]
+visible = false
+
 [node name="Function_Pickup" parent="Left hand" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0 )
 collision_layer = 0
@@ -64,7 +67,7 @@ collision_mask = 4
 collision_mask = 2048
 
 [node name="ovr_right_hand" parent="." instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0.5, 1, 0 )
 
 [node name="Right hand" type="ARVRController" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0 )
@@ -85,3 +88,5 @@ collision_mask = 2048
 [connection signal="cooldown_finished" from="ARVRCamera/vr_common_shader_cache" to="." method="_on_vr_common_shader_cache_cooldown_finished"]
 [connection signal="button_pressed" from="Left hand" to="." method="_on_Left_hand_button_pressed"]
 [connection signal="button_pressed" from="Right hand" to="." method="_on_Right_hand_button_pressed"]
+
+[editable path="Left hand/Function_Teleport"]

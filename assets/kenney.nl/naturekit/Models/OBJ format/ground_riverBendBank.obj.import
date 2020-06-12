@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ground_riverBendBank.obj-3948b0a426178b3d502d423647590dcd.mesh"
+
+[deps]
+
+files=[ "res://.import/ground_riverBendBank.obj-3948b0a426178b3d502d423647590dcd.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/ground_riverBendBank.obj"
+dest_files=[ "res://.import/ground_riverBendBank.obj-3948b0a426178b3d502d423647590dcd.mesh", "res://.import/ground_riverBendBank.obj-3948b0a426178b3d502d423647590dcd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/flower_purpleB.obj-90a8f70ca8785ea08b6ca59a97d31e11.mesh"
+
+[deps]
+
+files=[ "res://.import/flower_purpleB.obj-90a8f70ca8785ea08b6ca59a97d31e11.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/flower_purpleB.obj"
+dest_files=[ "res://.import/flower_purpleB.obj-90a8f70ca8785ea08b6ca59a97d31e11.mesh", "res://.import/flower_purpleB.obj-90a8f70ca8785ea08b6ca59a97d31e11.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
