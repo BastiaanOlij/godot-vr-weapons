@@ -31,6 +31,10 @@ func _randomize():
 		t.basis = t.basis.rotated(Vector3(1.0,1.0,1.0).normalized(),rand_range(0.0, 4.0))
 		t.basis = t.basis.scaled(Vector3(rand_range(min_scale, max_scale), rand_range(min_scale, max_scale), rand_range(min_scale, max_scale)))
 		t.origin = Vector3(rand_range(-distance, distance),0.0,rand_range(-distance, distance))
+		while t.origin.length() > distance:
+			# stay within a circle...
+			t.origin = Vector3(rand_range(-distance, distance),0.0,rand_range(-distance, distance))
+
 		multimesh.set_instance_transform(i, t)
 
 # Called when the node enters the scene tree for the first time.
