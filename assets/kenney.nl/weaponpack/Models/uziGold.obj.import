@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/uziGold.obj-647307ce611802320c5caee2457528eb.mesh"
+
+[deps]
+
+files=[ "res://.import/uziGold.obj-647307ce611802320c5caee2457528eb.mesh" ]
+
+source_file="res://assets/kenney.nl/weaponpack/Models/uziGold.obj"
+dest_files=[ "res://.import/uziGold.obj-647307ce611802320c5caee2457528eb.mesh", "res://.import/uziGold.obj-647307ce611802320c5caee2457528eb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pot_large.obj-4708b47ae1540915c698505fcac37eed.mesh"
+
+[deps]
+
+files=[ "res://.import/pot_large.obj-4708b47ae1540915c698505fcac37eed.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/pot_large.obj"
+dest_files=[ "res://.import/pot_large.obj-4708b47ae1540915c698505fcac37eed.mesh", "res://.import/pot_large.obj-4708b47ae1540915c698505fcac37eed.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

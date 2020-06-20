@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/grenade_vintage.obj-8b0306ce78f3c27662342390fab086dd.mesh"
+
+[deps]
+
+files=[ "res://.import/grenade_vintage.obj-8b0306ce78f3c27662342390fab086dd.mesh" ]
+
+source_file="res://assets/kenney.nl/weaponpack/Models/grenade_vintage.obj"
+dest_files=[ "res://.import/grenade_vintage.obj-8b0306ce78f3c27662342390fab086dd.mesh", "res://.import/grenade_vintage.obj-8b0306ce78f3c27662342390fab086dd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

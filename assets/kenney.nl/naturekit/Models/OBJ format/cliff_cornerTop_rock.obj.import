@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cliff_cornerTop_rock.obj-9df161a1f203936632766927b660930c.mesh"
+
+[deps]
+
+files=[ "res://.import/cliff_cornerTop_rock.obj-9df161a1f203936632766927b660930c.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/cliff_cornerTop_rock.obj"
+dest_files=[ "res://.import/cliff_cornerTop_rock.obj-9df161a1f203936632766927b660930c.mesh", "res://.import/cliff_cornerTop_rock.obj-9df161a1f203936632766927b660930c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

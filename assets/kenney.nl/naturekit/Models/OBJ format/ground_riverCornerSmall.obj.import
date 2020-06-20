@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ground_riverCornerSmall.obj-21aee11e542d2b670e17a14e1c4a2060.mesh"
+
+[deps]
+
+files=[ "res://.import/ground_riverCornerSmall.obj-21aee11e542d2b670e17a14e1c4a2060.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/ground_riverCornerSmall.obj"
+dest_files=[ "res://.import/ground_riverCornerSmall.obj-21aee11e542d2b670e17a14e1c4a2060.mesh", "res://.import/ground_riverCornerSmall.obj-21aee11e542d2b670e17a14e1c4a2060.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

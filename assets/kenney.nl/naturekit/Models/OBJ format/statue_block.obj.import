@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/statue_block.obj-66c64475331a6d3f2b4babcc6c19cba9.mesh"
+
+[deps]
+
+files=[ "res://.import/statue_block.obj-66c64475331a6d3f2b4babcc6c19cba9.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/statue_block.obj"
+dest_files=[ "res://.import/statue_block.obj-66c64475331a6d3f2b4babcc6c19cba9.mesh", "res://.import/statue_block.obj-66c64475331a6d3f2b4babcc6c19cba9.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

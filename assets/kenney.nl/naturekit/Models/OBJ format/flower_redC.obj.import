@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/flower_redC.obj-28eaeb21136693f63ac75e6c50964778.mesh"
+
+[deps]
+
+files=[ "res://.import/flower_redC.obj-28eaeb21136693f63ac75e6c50964778.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/flower_redC.obj"
+dest_files=[ "res://.import/flower_redC.obj-28eaeb21136693f63ac75e6c50964778.mesh", "res://.import/flower_redC.obj-28eaeb21136693f63ac75e6c50964778.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

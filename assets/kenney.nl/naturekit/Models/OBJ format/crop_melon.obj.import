@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/crop_melon.obj-9897d1bc49c1ebf304824075a106d0cf.mesh"
+
+[deps]
+
+files=[ "res://.import/crop_melon.obj-9897d1bc49c1ebf304824075a106d0cf.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/crop_melon.obj"
+dest_files=[ "res://.import/crop_melon.obj-9897d1bc49c1ebf304824075a106d0cf.mesh", "res://.import/crop_melon.obj-9897d1bc49c1ebf304824075a106d0cf.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/stump_roundDetailed.obj-3e1efebe773e161d69e075c401b12d6f.mesh"
+
+[deps]
+
+files=[ "res://.import/stump_roundDetailed.obj-3e1efebe773e161d69e075c401b12d6f.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/stump_roundDetailed.obj"
+dest_files=[ "res://.import/stump_roundDetailed.obj-3e1efebe773e161d69e075c401b12d6f.mesh", "res://.import/stump_roundDetailed.obj-3e1efebe773e161d69e075c401b12d6f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

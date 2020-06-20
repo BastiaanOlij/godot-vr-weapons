@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tree_oak.obj-f01e4d4ef6eb5633b219cc30696628b4.mesh"
+
+[deps]
+
+files=[ "res://.import/tree_oak.obj-f01e4d4ef6eb5633b219cc30696628b4.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/tree_oak.obj"
+dest_files=[ "res://.import/tree_oak.obj-f01e4d4ef6eb5633b219cc30696628b4.mesh", "res://.import/tree_oak.obj-f01e4d4ef6eb5633b219cc30696628b4.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

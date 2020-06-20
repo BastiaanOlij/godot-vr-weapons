@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tree_thin.obj-987b58a3acb67d6f152823797b5af91f.mesh"
+
+[deps]
+
+files=[ "res://.import/tree_thin.obj-987b58a3acb67d6f152823797b5af91f.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/tree_thin.obj"
+dest_files=[ "res://.import/tree_thin.obj-987b58a3acb67d6f152823797b5af91f.mesh", "res://.import/tree_thin.obj-987b58a3acb67d6f152823797b5af91f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

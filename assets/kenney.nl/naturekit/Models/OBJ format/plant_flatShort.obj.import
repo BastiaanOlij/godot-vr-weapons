@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/plant_flatShort.obj-eb2ca7ed25d7a9da507a9621271b9e76.mesh"
+
+[deps]
+
+files=[ "res://.import/plant_flatShort.obj-eb2ca7ed25d7a9da507a9621271b9e76.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/plant_flatShort.obj"
+dest_files=[ "res://.import/plant_flatShort.obj-eb2ca7ed25d7a9da507a9621271b9e76.mesh", "res://.import/plant_flatShort.obj-eb2ca7ed25d7a9da507a9621271b9e76.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

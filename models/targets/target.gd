@@ -7,10 +7,14 @@ func reset_target():
 	$Viewport/BulletHole.visible = false
 	$Viewport.render_target_update_mode = Viewport.UPDATE_ONCE
 
-func hit(p_at):
+func hit(p_at, p_direction = Vector3()):
 	# We hit our target at the position specified
 	var t = global_transform
 	var at = t.xform_inv(p_at)
+	
+	if p_direction.length() > 0.0:
+		var dir = t.basis.xform_inv(p_direction).normalized()
+		at += dir * at.x
 	
 	# Adjust from our 3D coordinates to 2D coordinates in our viewport
 	at.x = (0.5 - (at.z / 1.0)) * 512.0

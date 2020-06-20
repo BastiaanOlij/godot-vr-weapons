@@ -14,7 +14,7 @@ It can be adopted to 3.1 with minor changes especially around the shaders.
 Included in this repository is a custom windows build of the Godot OpenVR plugin with PR #30 applied.
 If you wish to run this project on another OS please compile from source code found here: https://github.com/GodotVR/godot_openvr
 
-This repository also includes a copy of https://github.com/GodotVR/godot-vr-common.
+This repository also includes a copy of https://github.com/GodotVR/godot-xr-tools (formally vr-common).
 
 ### License
 

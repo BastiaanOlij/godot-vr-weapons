@@ -1,0 +1,92 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://models/effects/Smoke_quad.tres" type="QuadMesh" id=1]
+[ext_resource path="res://player/controller.gd" type="Script" id=2]
+[ext_resource path="res://player/player.gd" type="Script" id=4]
+[ext_resource path="res://models/effects/jkm_muzzleflash/muzzle_flash_material.tres" type="Material" id=5]
+[ext_resource path="res://addons/godot-xr-tools/functions/Function_Direct_movement.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/godot-xr-tools/misc/VR_Common_Shader_Cache.tscn" type="PackedScene" id=7]
+[ext_resource path="res://addons/godot-xr-tools/functions/Function_Teleport.tscn" type="PackedScene" id=9]
+[ext_resource path="res://addons/godot-xr-tools/functions/Function_Pickup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://addons/godot-openvr/scenes/ovr_right_hand.tscn" type="PackedScene" id=11]
+[ext_resource path="res://addons/godot-openvr/scenes/ovr_left_hand.tscn" type="PackedScene" id=12]
+[ext_resource path="res://models/effects/Smoke_particles.tres" type="Material" id=13]
+[ext_resource path="res://addons/godot-openvr/scenes/ovr_shader_cache.tscn" type="PackedScene" id=14]
+[ext_resource path="res://addons/godot-xr-tools/functions/Function_pointer.tscn" type="PackedScene" id=15]
+
+[sub_resource type="CubeMesh" id=1]
+material = ExtResource( 5 )
+size = Vector3( 0.001, 0.001, 0.001 )
+
+[node name="Player" type="ARVROrigin"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.6213, 0, 1.6602 )
+script = ExtResource( 4 )
+
+[node name="ARVRCamera" type="ARVRCamera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0 )
+current = true
+far = 500.0
+
+[node name="vr_common_shader_cache" parent="ARVRCamera" instance=ExtResource( 7 )]
+
+[node name="Particles" type="Particles" parent="ARVRCamera/vr_common_shader_cache"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
+emitting = false
+one_shot = true
+process_material = ExtResource( 13 )
+draw_pass_1 = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="ARVRCamera/vr_common_shader_cache"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="ovr_shader_cache" parent="ARVRCamera" instance=ExtResource( 14 )]
+
+[node name="ovr_left_hand" parent="." instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.5, 1, 0 )
+
+[node name="Left hand" type="ARVRController" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, 0 )
+script = ExtResource( 2 )
+
+[node name="Function_Teleport" parent="Left hand" instance=ExtResource( 9 )]
+collision_layer = 0
+collision_mask = 6
+camera = NodePath("../../../Player/ARVRCamera")
+
+[node name="Capsule" parent="Left hand/Function_Teleport/Target/Player_figure" index="0"]
+visible = false
+
+[node name="Function_Pickup" parent="Left hand" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0 )
+collision_layer = 0
+collision_mask = 4
+
+[node name="Function_pointer" parent="Left hand" instance=ExtResource( 15 )]
+collision_mask = 2048
+
+[node name="ovr_right_hand" parent="." instance=ExtResource( 11 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0.5, 1, 0 )
+
+[node name="Right hand" type="ARVRController" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0 )
+controller_id = 2
+script = ExtResource( 2 )
+
+[node name="Function_Direct_movement" parent="Right hand" instance=ExtResource( 6 )]
+camera = NodePath("../../../Player/ARVRCamera")
+canFly = false
+
+[node name="Function_Pickup" parent="Right hand" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0 )
+collision_layer = 0
+collision_mask = 4
+
+[node name="Function_pointer" parent="Right hand" instance=ExtResource( 15 )]
+collision_mask = 2048
+[connection signal="cooldown_finished" from="ARVRCamera/vr_common_shader_cache" to="." method="_on_vr_common_shader_cache_cooldown_finished"]
+[connection signal="button_pressed" from="Left hand" to="." method="_on_Left_hand_button_pressed"]
+[connection signal="button_pressed" from="Right hand" to="." method="_on_Right_hand_button_pressed"]
+
+[editable path="Left hand/Function_Teleport"]

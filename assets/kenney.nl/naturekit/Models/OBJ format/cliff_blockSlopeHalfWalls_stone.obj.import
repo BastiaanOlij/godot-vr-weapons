@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cliff_blockSlopeHalfWalls_stone.obj-ddf3321a7d42bb9c08d4a09821323b61.mesh"
+
+[deps]
+
+files=[ "res://.import/cliff_blockSlopeHalfWalls_stone.obj-ddf3321a7d42bb9c08d4a09821323b61.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/cliff_blockSlopeHalfWalls_stone.obj"
+dest_files=[ "res://.import/cliff_blockSlopeHalfWalls_stone.obj-ddf3321a7d42bb9c08d4a09821323b61.mesh", "res://.import/cliff_blockSlopeHalfWalls_stone.obj-ddf3321a7d42bb9c08d4a09821323b61.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

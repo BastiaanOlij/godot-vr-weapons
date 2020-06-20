@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/crops_wheatStageB.obj-84e7b48a41c13178bbde22d682292610.mesh"
+
+[deps]
+
+files=[ "res://.import/crops_wheatStageB.obj-84e7b48a41c13178bbde22d682292610.mesh" ]
+
+source_file="res://assets/kenney.nl/naturekit/Models/OBJ format/crops_wheatStageB.obj"
+dest_files=[ "res://.import/crops_wheatStageB.obj-84e7b48a41c13178bbde22d682292610.mesh", "res://.import/crops_wheatStageB.obj-84e7b48a41c13178bbde22d682292610.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

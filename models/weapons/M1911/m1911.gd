@@ -1,4 +1,4 @@
-extends "res://addons/vr-common/objects/Object_pickable.gd"
+extends "res://addons/godot-xr-tools/objects/Object_pickable.gd"
 
 export (PackedScene) var casing = null
 export (PackedScene) var smoke = null
@@ -18,17 +18,10 @@ func get_rumble():
 	else:
 		return 0.0
 
-func _update_highlight():
-	var material = $Pivot/Gun/gunbody.mesh.surface_get_material(0)
-	if closest_count > 0:
-		material.set_shader_param("FresnelStrength", 1.0)
-	else:
-		material.set_shader_param("FresnelStrength", 0.0)
-
 func set_ammunition(new_value):
 	if ammunition != new_value:
 		ammunition = new_value
-		
+
 		$Ammo_count_viewport/Ammo_count.text = str(ammunition)
 		$Ammo_count_viewport.render_target_update_mode = Viewport.UPDATE_ONCE
 
@@ -38,7 +31,7 @@ func action():
 			set_ammunition(ammunition - 1)
 			$AnimationPlayer.play("Fire")
 			_emit_smoke()
-			
+
 			if $Aim.is_colliding():
 				var what_did_we_hit = $Aim.get_collider()
 				if what_did_we_hit.has_method("hit"):
@@ -57,22 +50,21 @@ func _emit_casing():
 	var new_casing = casing.instance()
 	new_casing.transform = $Pivot/Casing_spawn_point.global_transform
 	new_casing.linear_velocity = new_casing.transform.basis.x * initial_casing_velocity
-	
+
 	get_node("/root/Main/Viewport-VR/Spawns").add_child(new_casing)
 
 func _emit_smoke():
 	var new_smoke = smoke.instance()
 	new_smoke.transform = $Pivot/Smoke_spawn_point.global_transform
-	
+
 	get_node("/root/Main/Viewport-VR/Spawns").add_child(new_smoke)
 
 func _on_Gun_load_point_body_entered(body):
 	# our ammo is loaded, so we can destroy our magazine
 	body.drop_and_free()
-	
+
 	# and reload
 	set_ammunition(magazine_size)
-	
+
 	# and finally play reload animation
 	$AnimationPlayer.play("Load")
-	
