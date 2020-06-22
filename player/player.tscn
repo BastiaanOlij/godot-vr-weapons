@@ -25,6 +25,7 @@ script = ExtResource( 4 )
 [node name="ARVRCamera" type="ARVRCamera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0 )
 current = true
+near = 0.01
 far = 500.0
 
 [node name="vr_common_shader_cache" parent="ARVRCamera" instance=ExtResource( 7 )]

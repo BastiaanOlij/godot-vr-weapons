@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://models/weapons/Sniper/ScopeUI.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/pt_sans_96pt.tres" type="DynamicFont" id=2]
+
+[node name="ScopeUI" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 502.0
+margin_top = 502.0
+margin_right = 522.0
+margin_bottom = 522.0
+color = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 36.8321
+margin_top = 41.7431
+margin_right = 210.832
+margin_bottom = 104.743
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.909804, 0.14902, 0.14902, 1 )
+text = "Scope: 5	"
+__meta__ = {
+"_edit_use_anchors_": false
+}

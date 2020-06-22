@@ -1,13 +1,36 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://addons/godot-xr-tools/objects/Object_pickable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://models/weapons/Sniper/Sniper.gd" type="Script" id=2]
 [ext_resource path="res://assets/kenney.nl/weaponpack/Models/sniperCamo.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://models/weapons/Sniper/Bullet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/textures.com/camomaterial.tres" type="Material" id=5]
+[ext_resource path="res://models/weapons/Sniper/Gray8.tres" type="Material" id=6]
+[ext_resource path="res://models/weapons/Sniper/Gray5.tres" type="Material" id=7]
+[ext_resource path="res://models/weapons/Sniper/Glass.tres" type="Material" id=8]
+[ext_resource path="res://models/weapons/Sniper/ScopeUI.tscn" type="PackedScene" id=9]
 
 [sub_resource type="BoxShape" id=1]
 margin = 0.02
 extents = Vector3( 0.0396455, 0.11411, 0.414963 )
+
+[sub_resource type="QuadMesh" id=2]
+size = Vector2( 0.04, 0.04 )
+
+[sub_resource type="SpatialMaterial" id=3]
+metallic = 0.64
+roughness = 0.28
+
+[sub_resource type="QuadMesh" id=4]
+size = Vector2( 0.022, 0.022 )
+
+[sub_resource type="ViewportTexture" id=6]
+viewport_path = NodePath("Scope")
+
+[sub_resource type="SpatialMaterial" id=5]
+resource_local_to_scene = true
+flags_unshaded = true
+albedo_texture = SubResource( 6 )
 
 [node name="Sniper" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -15,66 +38,94 @@ center_pickup_on = NodePath("Pickup")
 highlight_mesh_instance = NodePath("Pivot/Gun")
 bullet = ExtResource( 4 )
 
-[node name="Pickup" type="Spatial" parent="." index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0393133, 0.146266 )
+[node name="Scope" type="Viewport" parent="." index="0"]
+size = Vector2( 1024, 1024 )
+keep_3d_linear = true
+render_target_v_flip = true
+render_target_update_mode = 1
 
-[node name="CollisionShape" parent="." index="1"]
+[node name="Camera" type="Camera" parent="Scope" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0915026, 0 )
+current = true
+fov = 5.0
+far = 500.0
+
+[node name="ScopeUI" parent="Scope" index="1" instance=ExtResource( 9 )]
+
+[node name="Pickup" type="Spatial" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0305632, 0.146266 )
+
+[node name="CollisionShape" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003281, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="Pivot" type="Spatial" parent="." index="2"]
+[node name="Pivot" type="Spatial" parent="." index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0718181, 0.2086 )
 
 [node name="Gun" type="MeshInstance" parent="Pivot" index="0"]
 transform = Transform( -5, 0, -1.62921e-06, 0, 5, 0, 1.62921e-06, 0, -5, 0.0041827, 0.0718181, -0.2086 )
 mesh = ExtResource( 3 )
-material/0 = null
-material/1 = null
-material/2 = null
-material/3 = null
-material/4 = null
-material/5 = null
-material/6 = null
-material/7 = null
-material/8 = null
-material/9 = null
-material/10 = null
-material/11 = null
-material/12 = null
-material/13 = null
-material/14 = null
-material/15 = null
-material/16 = null
-material/17 = null
-material/18 = null
-material/19 = null
-material/20 = null
-material/21 = null
-material/22 = null
-material/23 = null
-material/24 = null
-material/25 = null
-material/26 = null
-material/27 = null
-material/28 = null
-material/29 = null
-material/30 = null
-material/31 = null
-material/32 = null
-material/33 = null
-material/34 = null
-material/35 = null
-material/36 = null
-material/37 = null
-material/38 = null
-material/39 = null
-material/40 = null
-material/41 = null
+material/0 = ExtResource( 6 )
+material/1 = ExtResource( 5 )
+material/2 = ExtResource( 6 )
+material/3 = ExtResource( 5 )
+material/4 = ExtResource( 6 )
+material/5 = ExtResource( 5 )
+material/6 = ExtResource( 6 )
+material/7 = ExtResource( 7 )
+material/8 = ExtResource( 6 )
+material/9 = ExtResource( 7 )
+material/10 = ExtResource( 5 )
+material/11 = ExtResource( 6 )
+material/12 = ExtResource( 7 )
+material/13 = ExtResource( 6 )
+material/14 = ExtResource( 7 )
+material/15 = ExtResource( 8 )
+material/16 = ExtResource( 6 )
+material/17 = ExtResource( 7 )
+material/18 = ExtResource( 6 )
+material/19 = ExtResource( 7 )
+material/20 = ExtResource( 6 )
+material/21 = ExtResource( 7 )
+material/22 = ExtResource( 8 )
+material/23 = ExtResource( 6 )
+material/24 = ExtResource( 5 )
+material/25 = ExtResource( 6 )
+material/26 = ExtResource( 7 )
+material/27 = ExtResource( 6 )
+material/28 = ExtResource( 5 )
+material/29 = ExtResource( 6 )
+material/30 = ExtResource( 5 )
+material/31 = ExtResource( 6 )
+material/32 = ExtResource( 7 )
+material/33 = ExtResource( 5 )
+material/34 = ExtResource( 7 )
+material/35 = ExtResource( 6 )
+material/36 = ExtResource( 5 )
+material/37 = ExtResource( 6 )
+material/38 = ExtResource( 5 )
+material/39 = ExtResource( 6 )
+material/40 = ExtResource( 7 )
+material/41 = ExtResource( 6 )
 
 [node name="Muzzle" type="Spatial" parent="Pivot" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0882579, -0.639009 )
 
-[node name="cooldown" type="Timer" parent="." index="3"]
+[node name="FrontScope" type="MeshInstance" parent="Pivot" index="2"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1.56314e-08, 0.160655, -0.160628 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="ScopeImage" type="MeshInstance" parent="Pivot" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.161, -0.0234662 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="RemoteTransform" type="RemoteTransform" parent="Pivot" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.163321, -0.2086 )
+remote_path = NodePath("../../Scope/Camera")
+
+[node name="cooldown" type="Timer" parent="." index="4"]
 wait_time = 0.5
 one_shot = true
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
