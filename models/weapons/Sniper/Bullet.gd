@@ -26,7 +26,7 @@ func set_start_transform(t):
 	global_transform = t
 	last_position = t.origin
 	
-	_add_test_object()
+	# _add_test_object()
 
 func _on_Lifetime_timeout():
 	queue_free()
@@ -48,4 +48,4 @@ func _physics_process(delta):
 		
 		$CollisionShape.shape.height = clamp(delta_position.length()-0.1, 0.0, 100.0)
 		
-		_add_test_object()
+		# _add_test_object()
