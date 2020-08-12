@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://addons/godot-xr-tools/objects/Object_pickable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://models/weapons/Sniper/Sniper.gd" type="Script" id=2]
@@ -9,28 +9,47 @@
 [ext_resource path="res://models/weapons/Sniper/Gray5.tres" type="Material" id=7]
 [ext_resource path="res://models/weapons/Sniper/Glass.tres" type="Material" id=8]
 [ext_resource path="res://models/weapons/Sniper/ScopeUI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/freesound.org/514228__superphat__sniper-rifle.wav" type="AudioStream" id=10]
+[ext_resource path="res://models/effects/TwoHanded.tscn" type="PackedScene" id=11]
+[ext_resource path="res://addons/godot-openvr/meshes/vr_glove_left_model_slim.glb" type="PackedScene" id=12]
+[ext_resource path="res://addons/godot-openvr/meshes/models_hands_vr_glove_vmat.material" type="Material" id=13]
 
 [sub_resource type="BoxShape" id=1]
 margin = 0.02
-extents = Vector3( 0.0396455, 0.11411, 0.414963 )
+extents = Vector3( 0.0263426, 0.0288114, 0.273356 )
 
-[sub_resource type="QuadMesh" id=2]
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.0179598, 0.0182654, 0.136212 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.02335, 0.0227275, 0.109294 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.0228363, 0.0317832, 0.0512199 )
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 0.0222273, 0.0539175, 0.115738 )
+
+[sub_resource type="QuadMesh" id=5]
 size = Vector2( 0.04, 0.04 )
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=6]
 metallic = 0.64
 roughness = 0.28
 
-[sub_resource type="QuadMesh" id=4]
+[sub_resource type="QuadMesh" id=7]
 size = Vector2( 0.022, 0.022 )
 
-[sub_resource type="ViewportTexture" id=6]
+[sub_resource type="ViewportTexture" id=8]
 viewport_path = NodePath("Scope")
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=9]
 resource_local_to_scene = true
 flags_unshaded = true
-albedo_texture = SubResource( 6 )
+albedo_texture = SubResource( 8 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 0.0196887, 0.00769291, 0.0528758 )
 
 [node name="Sniper" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -45,7 +64,7 @@ render_target_v_flip = true
 render_target_update_mode = 1
 
 [node name="Camera" type="Camera" parent="Scope" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0915026, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0915029, 0 )
 current = true
 fov = 5.0
 far = 500.0
@@ -56,10 +75,26 @@ far = 500.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0305632, 0.146266 )
 
 [node name="CollisionShape" parent="." index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003281, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000498843, 0.0162359, 0.134616 )
 shape = SubResource( 1 )
 
-[node name="Pivot" type="Spatial" parent="." index="3"]
+[node name="CollisionMuzzle" type="CollisionShape" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000498843, 0.01669, -0.271166 )
+shape = SubResource( 2 )
+
+[node name="CollisionScope" type="CollisionShape" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000498843, 0.0879839, 0.0898508 )
+shape = SubResource( 3 )
+
+[node name="CollisionStock" type="CollisionShape" parent="." index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000462949, -0.0409206, 0.356547 )
+shape = SubResource( 4 )
+
+[node name="CollisionMagAndTrigger" type="CollisionShape" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000198454, -0.0581817, 0.130635 )
+shape = SubResource( 10 )
+
+[node name="Pivot" type="Spatial" parent="." index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0718181, 0.2086 )
 
 [node name="Gun" type="MeshInstance" parent="Pivot" index="0"]
@@ -113,19 +148,50 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0882579, -0.639009 )
 
 [node name="FrontScope" type="MeshInstance" parent="Pivot" index="2"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1.56314e-08, 0.160655, -0.160628 )
-mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
 
 [node name="ScopeImage" type="MeshInstance" parent="Pivot" index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.161, -0.0234662 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 9 )
 
 [node name="RemoteTransform" type="RemoteTransform" parent="Pivot" index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.163321, -0.2086 )
 remote_path = NodePath("../../Scope/Camera")
 
-[node name="cooldown" type="Timer" parent="." index="4"]
+[node name="GunHand" parent="Pivot" index="5" instance=ExtResource( 12 )]
+transform = Transform( -0.000825035, -0.507985, 0.861365, -0.999936, 0.0101196, 0.0050102, -0.0112618, -0.861306, -0.507961, -0.082721, 0.0348624, -0.239706 )
+visible = false
+
+[node name="Skeleton" parent="Pivot/GunHand/RootNode" index="0"]
+transform = Transform( 1, 3.72529e-09, 3.25963e-09, 9.31323e-10, 1, -2.98023e-08, 0, -2.98023e-08, 1, 1.11759e-08, 0.0102891, 0.00592732 )
+
+[node name="vr_glove_left_slim" parent="Pivot/GunHand/RootNode/Skeleton" index="0"]
+material/0 = ExtResource( 13 )
+
+[node name="cooldown" type="Timer" parent="." index="8"]
 wait_time = 0.5
 one_shot = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0183631, -0.365885 )
+stream = ExtResource( 10 )
+bus = "_Gunshots"
+
+[node name="TwoHandedAnchor" type="Spatial" parent="." index="10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0246966, -0.0947674 )
+
+[node name="TwoHanded" parent="TwoHandedAnchor" index="0" instance=ExtResource( 11 )]
+
+[node name="CollisionShape" parent="TwoHandedAnchor/TwoHanded" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0438837, 0.0328946 )
+shape = SubResource( 11 )
+
+[node name="Target" type="Spatial" parent="TwoHandedAnchor" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.094672, 0 )
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
+
+[editable path="Pivot/GunHand"]
+
+[editable path="TwoHandedAnchor/TwoHanded"]

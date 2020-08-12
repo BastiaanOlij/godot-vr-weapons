@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://UI/Viewport-UI.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://addons/godot-xr-tools/effects/Fade_To_Black.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/loading/Loading.tscn" type="PackedScene" id=5]
 [ext_resource path="res://default_env.tres" type="Environment" id=6]
+[ext_resource path="res://player/Player_Function_Pickup.gd" type="Script" id=7]
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 1 )
@@ -22,6 +23,24 @@ render_viewport = NodePath("..")
 
 [node name="Particles" parent="Viewport-VR/Player/ARVRCamera/vr_common_shader_cache" index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57628e-07, 0, 2.37012 )
+
+[node name="Function_Teleport" parent="Viewport-VR/Player/Left hand" index="0"]
+enabled = true
+teleport_button = 15
+can_teleport_color = Color( 0, 1, 0, 1 )
+cant_teleport_color = Color( 1, 0, 0, 1 )
+player_height = 1.8
+player_radius = 0.4
+strength = 5.0
+max_slope = 20.0
+
+[node name="Function_Pickup" parent="Viewport-VR/Player/Left hand" index="1"]
+script = ExtResource( 7 )
+hand = NodePath("../../ovr_left_hand")
+
+[node name="Function_Pickup" parent="Viewport-VR/Player/Right hand" index="1"]
+script = ExtResource( 7 )
+hand = NodePath("../../ovr_right_hand")
 
 [node name="LoadingScreen" parent="Viewport-VR" instance=ExtResource( 5 )]
 visible = false

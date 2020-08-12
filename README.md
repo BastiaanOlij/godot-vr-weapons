@@ -1,12 +1,6 @@
 # Godot VR Weapons demo
 
-This is a Godot demo project in support of my Godot VR weapons youtube tutorial videos.
-- [Part one](https://youtu.be/KaJSifo8Wis)
-- [Part two](https://youtu.be/gPVXwwvxlzs)
-- [Part three](https://youtu.be/57YxdOHQV2E)
-- [Part four](https://youtu.be/e_KaRNYg3P4)
-- [Part five](https://youtu.be/EK91zvMhck0)
-- [Part six](https://youtu.be/ERFCutI6mqc)
+This is a Godot demo project in support of my Godot VR weapons youtube tutorial videos: [Playlist)(https://www.youtube.com/playlist?list=PLe63S5Eft1KaIq9N5PsS5FA3pcLrh686y)
 
 In order to run this project you will Godot 3.2 or later.
 It can be adopted to 3.1 with minor changes especially around the shaders.
@@ -36,7 +30,7 @@ https://www.cgtrader.com/3d-models/military/armor/shooting-range-interiors
  - [Gun range](https://www.cgtrader.com/3d-models/military/armor/shooting-range-interiors)
  - [Free3D M1911 Gun](https://free3d.com/3d-model/m1911-game-ready-833466.html)
  - [Muzzle flash](https://opengameart.org/content/muzzle-flash-with-model)
- - [Sound files](https://freesound.org/), [Gunshot sound](https://www.youtube.com/redirect?redir_token=ZgZTgBeHrZN-UyisPXJh9vI1zKl8MTU2MTk3NDkwN0AxNTYxODg4NTA3&event=video_description&v=EK91zvMhck0&q=https%3A%2F%2Ffreesound.org%2Fpeople%2FBrokenphono%2Fsounds%2F344142%2F), [Empty gun sound](https://www.youtube.com/redirect?redir_token=ZgZTgBeHrZN-UyisPXJh9vI1zKl8MTU2MTk3NDkwN0AxNTYxODg4NTA3&event=video_description&v=EK91zvMhck0&q=https%3A%2F%2Ffreesound.org%2Fpeople%2FKlawyKogut%2Fsounds%2F154934%2F), [Magazine insert](https://freesound.org/people/Pjkasinski3/sounds/171614/)
+ - [Sound files](https://freesound.org/), [Gunshot sound](https://www.youtube.com/redirect?redir_token=ZgZTgBeHrZN-UyisPXJh9vI1zKl8MTU2MTk3NDkwN0AxNTYxODg4NTA3&event=video_description&v=EK91zvMhck0&q=https%3A%2F%2Ffreesound.org%2Fpeople%2FBrokenphono%2Fsounds%2F344142%2F), [Empty gun sound](https://www.youtube.com/redirect?redir_token=ZgZTgBeHrZN-UyisPXJh9vI1zKl8MTU2MTk3NDkwN0AxNTYxODg4NTA3&event=video_description&v=EK91zvMhck0&q=https%3A%2F%2Ffreesound.org%2Fpeople%2FKlawyKogut%2Fsounds%2F154934%2F), [Magazine insert](https://freesound.org/people/Pjkasinski3/sounds/171614/), [Sniper shot](https://freesound.org/people/SuperPhat/sounds/514228/)
  - [Fonts](http://www.fonts101.com/), [Sci Fied 2002](http://www.fonts101.com/fonts/view/Standard/15898/Sci_Fied_2002)
  - [OpenVR button info](https://github.com/GodotVR/godot_openvr/issues/4)
 

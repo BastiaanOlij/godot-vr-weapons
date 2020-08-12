@@ -23,6 +23,10 @@ config/icon="res://icon.png"
 
 resource_queue="*res://addons/resource-queue/resource_queue.gd"
 
+[display]
+
+window/size/fullscreen=true
+
 [gdnative]
 
 singletons=[ "res://addons/godot-openvr/godot_openvr.gdnlib" ]
