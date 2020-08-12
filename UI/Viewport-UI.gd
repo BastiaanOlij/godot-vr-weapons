@@ -1,6 +1,7 @@
 extends Viewport
 
 export var target_fps = 90
+export var zoom = 1.3
 var simulate_fps = 0.0
 
 func set_viewport_texture(p_texture):
@@ -23,7 +24,7 @@ func _process(delta):
 	if $"VR-Preview".texture:
 		var texture_size = $"VR-Preview".texture.get_size()
 		var texture_scale = size.x / texture_size.x
-		var new_size = texture_size * texture_scale
+		var new_size = zoom * texture_size * texture_scale
 		if $"VR-Preview".rect_size != new_size:
 			$"VR-Preview".rect_size = texture_size * texture_scale
 			$"VR-Preview".rect_position = (size - $"VR-Preview".rect_size) * 0.5
