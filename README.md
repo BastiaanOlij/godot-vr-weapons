@@ -1,12 +1,6 @@
 # Godot VR Weapons demo
 
-This is a Godot demo project in support of my Godot VR weapons youtube tutorial videos.
-- [Part one](https://youtu.be/KaJSifo8Wis)
-- [Part two](https://youtu.be/gPVXwwvxlzs)
-- [Part three](https://youtu.be/57YxdOHQV2E)
-- [Part four](https://youtu.be/e_KaRNYg3P4)
-- [Part five](https://youtu.be/EK91zvMhck0)
-- [Part six](https://youtu.be/ERFCutI6mqc)
+This is a Godot demo project in support of my Godot VR weapons youtube tutorial videos: [Playlist)(https://www.youtube.com/playlist?list=PLe63S5Eft1KaIq9N5PsS5FA3pcLrh686y)
 
 In order to run this project you will Godot 3.2 or later.
 It can be adopted to 3.1 with minor changes especially around the shaders.
